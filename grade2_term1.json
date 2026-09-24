@@ -1,8 +1,8 @@
 {
-  "contentVersion": 1,
+  "contentVersion": 2,
   "subject": "mathematics",
   "grade": 2,
-  "term": "1",
+  "term": "1-2",
   "topics": [
     {
       "id": "addition",
@@ -32,33 +32,35 @@
           "answer": "A + B",
           "answerType": "integer",
           "explanation": "Считай по одному: начни с {A} и прибавляй {B} единиц.",
-          "difficulty": 1
+          "difficulty": 1,
+          "enabled": true
         },
         {
           "id": "math_add_002",
-          "title": "Сложение двух чисел (до 50)",
+          "title": "Сложение с переходом через десяток (до 20)",
           "question": "Вычисли: {A} + {B} = ?",
           "variables": {
             "A": {
               "type": "integer",
-              "min": 10,
-              "max": 30,
+              "min": 6,
+              "max": 9,
               "step": 1
             },
             "B": {
               "type": "integer",
               "min": 5,
-              "max": 20,
+              "max": 9,
               "step": 1
             }
           },
           "constraints": [
-            "A + B <= 50"
+            "A + B <= 20",
+            "A + B > 10"
           ],
           "answer": "A + B",
           "answerType": "integer",
-          "explanation": "Сначала сложи десятки, затем единицы.",
-          "difficulty": 1
+          "explanation": "Дополни {A} до 10, а остаток от {B} прибавь к десяти. Например: {A} + {B} = {A + B}.",
+          "difficulty": 2
         },
         {
           "id": "math_add_003",
@@ -88,29 +90,29 @@
         },
         {
           "id": "math_add_004",
-          "title": "Задача на сложение",
-          "question": "У Маши было {A} яблок, а у Пети — {B} яблок. Сколько яблок у них вместе?",
+          "title": "Сложение с переходом через десяток (до 100)",
+          "question": "Вычисли: {A} + {B} = ?",
           "variables": {
             "A": {
               "type": "integer",
-              "min": 3,
-              "max": 15,
+              "min": 15,
+              "max": 89,
               "step": 1
             },
             "B": {
               "type": "integer",
-              "min": 3,
-              "max": 15,
+              "min": 6,
+              "max": 9,
               "step": 1
             }
           },
           "constraints": [
-            "A + B <= 30"
+            "A + B <= 100"
           ],
           "answer": "A + B",
           "answerType": "integer",
-          "explanation": "{A} + {B} = {A + B}",
-          "difficulty": 1
+          "explanation": "Дополни {A} до ближайшего десятка, а затем прибавь то, что осталось от {B}.",
+          "difficulty": 3
         },
         {
           "id": "math_add_005",
@@ -143,6 +145,32 @@
           "answerType": "integer",
           "explanation": "Сначала сложи {A} и {B}, потом прибавь {C}.",
           "difficulty": 2
+        },
+        {
+          "id": "math_add_006",
+          "title": "Задача на сложение",
+          "question": "У Маши было {A} яблок, а у Пети — {B} яблок. Сколько яблок у них вместе?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 3,
+              "max": 15,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 3,
+              "max": 15,
+              "step": 1
+            }
+          },
+          "constraints": [
+            "A + B <= 30"
+          ],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "{A} + {B} = {A + B}",
+          "difficulty": 1
         }
       ]
     },
@@ -178,29 +206,29 @@
         },
         {
           "id": "math_sub_002",
-          "title": "Вычитание (до 50)",
-          "question": "Реши пример: {A} - {B} = ?",
+          "title": "Вычитание с переходом через десяток (до 20)",
+          "question": "Вычисли: {A} - {B} = ?",
           "variables": {
             "A": {
               "type": "integer",
-              "min": 20,
-              "max": 50,
+              "min": 11,
+              "max": 18,
               "step": 1
             },
             "B": {
               "type": "integer",
-              "min": 5,
-              "max": 20,
+              "min": 2,
+              "max": 9,
               "step": 1
             }
           },
           "constraints": [
-            "A > B"
+            "A - B >= 1"
           ],
           "answer": "A - B",
           "answerType": "integer",
-          "explanation": "Вычитай поразрядно: сначала единицы, потом десятки.",
-          "difficulty": 1
+          "explanation": "Раздели {B} на удобные части: сначала вычти столько, чтобы получить 10, а потом вычти остаток.",
+          "difficulty": 2
         },
         {
           "id": "math_sub_003",
@@ -279,6 +307,56 @@
           "answerType": "integer",
           "explanation": "Неизвестное = {B} - {A} = {B - A}",
           "difficulty": 2
+        },
+        {
+          "id": "math_sub_006",
+          "title": "Нахождение неизвестного вычитаемого",
+          "question": "{A} - ? = {C}. Найди неизвестное вычитаемое.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 20,
+              "max": 60,
+              "step": 1
+            },
+            "C": {
+              "type": "integer",
+              "min": 5,
+              "max": 40,
+              "step": 1
+            }
+          },
+          "constraints": [
+            "A > C"
+          ],
+          "answer": "A - C",
+          "answerType": "integer",
+          "explanation": "Неизвестное вычитаемое = уменьшаемое минус разность: {A} - {C} = {A - C}.",
+          "difficulty": 2
+        },
+        {
+          "id": "math_sub_007",
+          "title": "Нахождение неизвестного уменьшаемого",
+          "question": "? - {B} = {C}. Найди неизвестное уменьшаемое.",
+          "variables": {
+            "B": {
+              "type": "integer",
+              "min": 5,
+              "max": 30,
+              "step": 1
+            },
+            "C": {
+              "type": "integer",
+              "min": 5,
+              "max": 40,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "B + C",
+          "answerType": "integer",
+          "explanation": "Неизвестное уменьшаемое = вычитаемое плюс разность: {B} + {C} = {B + C}.",
+          "difficulty": 2
         }
       ]
     },
@@ -302,7 +380,8 @@
           "answer": "A * 2",
           "answerType": "integer",
           "explanation": "{A} × 2 = {A} + {A} = {A * 2}",
-          "difficulty": 1
+          "difficulty": 1,
+          "enabled": false
         },
         {
           "id": "math_mul_002",
@@ -320,10 +399,49 @@
           "answer": "A * 3",
           "answerType": "integer",
           "explanation": "{A} × 3 = {A} + {A} + {A} = {A * 3}",
-          "difficulty": 1
+          "difficulty": 1,
+          "enabled": false
         },
         {
           "id": "math_mul_003",
+          "title": "Умножение на 4",
+          "question": "Вычисли: {A} × 4 = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 4",
+          "answerType": "integer",
+          "explanation": "{A} × 4 = {A} + {A} + {A} + {A} = {A * 4}",
+          "difficulty": 1,
+          "enabled": false
+        },
+        {
+          "id": "math_mul_004",
+          "title": "Умножение на 5",
+          "question": "Вычисли: {A} × 5 = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 5",
+          "answerType": "integer",
+          "explanation": "{A} × 5 = {A} + {A} + {A} + {A} + {A} = {A * 5}",
+          "difficulty": 1,
+          "enabled": false
+        },
+        {
+          "id": "math_mul_005",
           "title": "Умножение двух чисел",
           "question": "Найди произведение: {A} × {B} = ?",
           "variables": {
@@ -346,10 +464,11 @@
           "answer": "A * B",
           "answerType": "integer",
           "explanation": "{A} × {B} = {A * B}",
-          "difficulty": 2
+          "difficulty": 2,
+          "enabled": false
         },
         {
-          "id": "math_mul_004",
+          "id": "math_mul_006",
           "title": "Задача на умножение",
           "question": "В {A} коробках по {B} карандашей. Сколько карандашей всего?",
           "variables": {
@@ -372,10 +491,11 @@
           "answer": "A * B",
           "answerType": "integer",
           "explanation": "{A} × {B} = {A * B}",
-          "difficulty": 2
+          "difficulty": 2,
+          "enabled": false
         },
         {
-          "id": "math_mul_005",
+          "id": "math_mul_007",
           "title": "Площадь прямоугольника",
           "question": "Прямоугольник имеет стороны {A} см и {B} см. Какова его площадь (в кв.см)?",
           "variables": {
@@ -398,7 +518,35 @@
           "answer": "A * B",
           "answerType": "integer",
           "explanation": "Площадь = длина × ширина = {A} × {B} = {A * B} кв.см",
-          "difficulty": 2
+          "difficulty": 2,
+          "enabled": false
+        },
+        {
+          "id": "math_mul_008",
+          "title": "Сравнение: во сколько раз больше",
+          "question": "У Иры {A} наклеек, а у Насти в {B} раз больше. Сколько наклеек у Насти?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 2,
+              "max": 5,
+              "step": 1
+            }
+          },
+          "constraints": [
+            "A * B <= 50"
+          ],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "Если у Насти в {B} раз больше, то наклеек у неё {A} × {B} = {A * B}.",
+          "difficulty": 2,
+          "enabled": false
         }
       ]
     },
@@ -422,7 +570,8 @@
           "answer": "A / 2",
           "answerType": "integer",
           "explanation": "{A} ÷ 2 = {A / 2}",
-          "difficulty": 1
+          "difficulty": 1,
+          "enabled": false
         },
         {
           "id": "math_div_002",
@@ -440,7 +589,315 @@
           "answer": "A / 3",
           "answerType": "integer",
           "explanation": "{A} ÷ 3 = {A / 3}",
+          "difficulty": 1,
+          "enabled": false
+        },
+        {
+          "id": "math_div_003",
+          "title": "Деление на 4",
+          "question": "Вычисли: {A} ÷ 4 = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 4,
+              "max": 40,
+              "step": 4
+            }
+          },
+          "constraints": [],
+          "answer": "A / 4",
+          "answerType": "integer",
+          "explanation": "{A} ÷ 4 = {A / 4}",
+          "difficulty": 1,
+          "enabled": false
+        },
+        {
+          "id": "math_div_004",
+          "title": "Деление на 5",
+          "question": "Вычисли: {A} ÷ 5 = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 5,
+              "max": 50,
+              "step": 5
+            }
+          },
+          "constraints": [],
+          "answer": "A / 5",
+          "answerType": "integer",
+          "explanation": "{A} ÷ 5 = {A / 5}",
+          "difficulty": 1,
+          "enabled": false
+        },
+        {
+          "id": "math_div_005",
+          "title": "Задача на деление поровну",
+          "question": "Мама испекла {A} пирожков и разложила их поровну на 4 тарелки. Сколько пирожков на каждой тарелке?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 8,
+              "max": 40,
+              "step": 4
+            }
+          },
+          "constraints": [],
+          "answer": "A / 4",
+          "answerType": "integer",
+          "explanation": "{A} пирожков разделить поровну на 4 тарелки: {A} ÷ 4 = {A / 4} пирожков на каждой.",
+          "difficulty": 2,
+          "enabled": false
+        },
+        {
+          "id": "math_div_006",
+          "title": "Задача на деление по содержанию",
+          "question": "У Пети {A} конфет. Он раскладывает их по 5 конфет в один пакет. Сколько пакетов получится?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 10,
+              "max": 50,
+              "step": 5
+            }
+          },
+          "constraints": [],
+          "answer": "A / 5",
+          "answerType": "integer",
+          "explanation": "{A} ÷ 5 = {A / 5} пакетов.",
+          "difficulty": 2,
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "measurement_geometry",
+      "title": "Величины и геометрия",
+      "tasks": [
+        {
+          "id": "math_geo_001",
+          "title": "Периметр прямоугольника",
+          "question": "Найди периметр прямоугольника со сторонами {A} см и {B} см.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 15,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 2,
+              "max": 15,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "2 * (A + B)",
+          "answerType": "integer",
+          "explanation": "Периметр прямоугольника — это сумма всех его сторон: 2 × ({A} + {B}) = {2 * (A + B)} см.",
+          "difficulty": 2
+        },
+        {
+          "id": "math_geo_002",
+          "title": "Периметр квадрата",
+          "question": "Сторона квадрата равна {A} см. Найди его периметр.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 20,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "4 * A",
+          "answerType": "integer",
+          "explanation": "У квадрата все 4 стороны равны, поэтому периметр = 4 × {A} = {4 * A} см.",
           "difficulty": 1
+        },
+        {
+          "id": "math_geo_003",
+          "title": "Дециметры и сантиметры",
+          "question": "Вырази в сантиметрах: {A} дм {B} см.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 9,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 1,
+              "max": 9,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 10 + B",
+          "answerType": "integer",
+          "explanation": "В 1 дм — 10 см, значит {A} дм = {A * 10} см. Прибавь ещё {B} см: {A * 10} + {B} = {A * 10 + B} см.",
+          "difficulty": 2
+        },
+        {
+          "id": "math_geo_004",
+          "title": "Сумма длин отрезков",
+          "question": "Длина первого отрезка {A} см. Второй отрезок на {B} см длиннее первого. Найди сумму длин обоих отрезков.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 3,
+              "max": 20,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "2 * A + B",
+          "answerType": "integer",
+          "explanation": "Второй отрезок равен {A} + {B} = {A + B} см. Сумма длин: {A} + {A + B} = {2 * A + B} см.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "order_of_operations",
+      "title": "Порядок действий",
+      "tasks": [
+        {
+          "id": "math_ord_001",
+          "title": "Скобки выполняются первыми",
+          "question": "Вычисли: ({A} + {B}) × {C} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            },
+            "C": {
+              "type": "integer",
+              "min": 2,
+              "max": 3,
+              "step": 1
+            }
+          },
+          "constraints": [
+            "(A + B) * C <= 100"
+          ],
+          "answer": "(A + B) * C",
+          "answerType": "integer",
+          "explanation": "Сначала реши выражение в скобках: {A} + {B} = {A + B}. Потом умножь на {C}: {A + B} × {C} = {(A + B) * C}.",
+          "difficulty": 3
+        },
+        {
+          "id": "math_ord_002",
+          "title": "Умножение выполняется раньше сложения",
+          "question": "Вычисли: {A} + {B} × {C} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 20,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            },
+            "C": {
+              "type": "integer",
+              "min": 2,
+              "max": 5,
+              "step": 1
+            }
+          },
+          "constraints": [
+            "A + B * C <= 100"
+          ],
+          "answer": "A + B * C",
+          "answerType": "integer",
+          "explanation": "Сначала умножение: {B} × {C} = {B * C}. Потом сложение: {A} + {B * C} = {A + B * C}. Умножение выполняется раньше сложения!",
+          "difficulty": 3,
+          "enabled": false
+        },
+        {
+          "id": "math_ord_003",
+          "title": "Действия по порядку слева направо",
+          "question": "Вычисли: {A} + {B} - {C} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 5,
+              "max": 30,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 5,
+              "max": 30,
+              "step": 1
+            },
+            "C": {
+              "type": "integer",
+              "min": 1,
+              "max": 20,
+              "step": 1
+            }
+          },
+          "constraints": [
+            "A + B - C >= 0"
+          ],
+          "answer": "A + B - C",
+          "answerType": "integer",
+          "explanation": "Выполняй действия по порядку слева направо: {A} + {B} = {A + B}, затем {A + B} - {C} = {A + B - C}.",
+          "difficulty": 2
+        },
+        {
+          "id": "math_ord_004",
+          "title": "Скобки при вычитании",
+          "question": "Вычисли: {A} - ({B} + {C}) = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 20,
+              "max": 60,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 2,
+              "max": 15,
+              "step": 1
+            },
+            "C": {
+              "type": "integer",
+              "min": 2,
+              "max": 15,
+              "step": 1
+            }
+          },
+          "constraints": [
+            "A > B + C"
+          ],
+          "answer": "A - (B + C)",
+          "answerType": "integer",
+          "explanation": "Сначала сложи числа в скобках: {B} + {C} = {B + C}. Потом вычти из {A}: {A} - {B + C} = {A - (B + C)}.",
+          "difficulty": 3
         }
       ]
     },
@@ -472,6 +929,82 @@
           "answer": "A - B",
           "answerType": "integer",
           "explanation": "{A} - {B} = {A - B}",
+          "difficulty": 2
+        },
+        {
+          "id": "math_wp_002",
+          "title": "Задача в два действия",
+          "question": "В саду росло {A} яблонь и {B} груш. {C} деревьев спилили. Сколько деревьев осталось в саду?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 5,
+              "max": 20,
+              "step": 1
+            },
+            "B": {
+              "type": "integer",
+              "min": 5,
+              "max": 20,
+              "step": 1
+            },
+            "C": {
+              "type": "integer",
+              "min": 2,
+              "max": 15,
+              "step": 1
+            }
+          },
+          "constraints": [
+            "A + B > C"
+          ],
+          "answer": "A + B - C",
+          "answerType": "integer",
+          "explanation": "Сначала найди, сколько деревьев было всего: {A} + {B} = {A + B}. Потом вычти спиленные: {A + B} - {C} = {A + B - C}.",
+          "difficulty": 3
+        },
+        {
+          "id": "math_wp_003",
+          "title": "Задача на нехватку",
+          "question": "Для поездки нужно {A} рублей. У Саши есть {B} рублей. Сколько рублей ему не хватает?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 50,
+              "max": 200,
+              "step": 10
+            },
+            "B": {
+              "type": "integer",
+              "min": 10,
+              "max": 150,
+              "step": 10
+            }
+          },
+          "constraints": [
+            "A > B"
+          ],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "Не хватает {A} - {B} = {A - B} рублей.",
+          "difficulty": 2
+        },
+        {
+          "id": "math_wp_004",
+          "title": "Задача на деление в жизни",
+          "question": "Учительница раздала {A} тетрадей поровну на 3 команды. Сколько тетрадей получила каждая команда?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 6,
+              "max": 60,
+              "step": 3
+            }
+          },
+          "constraints": [],
+          "answer": "A / 3",
+          "answerType": "integer",
+          "explanation": "{A} ÷ 3 = {A / 3} тетрадей на команду.",
           "difficulty": 2
         }
       ]
