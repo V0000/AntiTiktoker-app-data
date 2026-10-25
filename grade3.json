@@ -1,0 +1,325 @@
+{
+  "contentVersion": 2,
+  "subject": "mathematics",
+  "grade": 3,
+  "term": "0",
+  "topics": [
+    {
+      "id": "multiplication_table",
+      "title": "Табличное умножение",
+      "tasks": [
+        {
+          "id": "mt_basic_001",
+          "title": "Таблица умножения",
+          "question": "Вычисли: {A} × {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "{A} × {B} = {A * B}. Вспоминай таблицу умножения.",
+          "difficulty": 1
+        },
+        {
+          "id": "mt_basic_002",
+          "title": "Произведение с обратным порядком",
+          "question": "Найди произведение: {A} × {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 6, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 4, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "От перестановки множителей произведение не меняется: {A} × {B} = {A * B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "mt_word_001",
+          "title": "Задача на умножение",
+          "question": "В {A} коробках по {B} ручек. Сколько ручек во всех коробках?",
+          "variables": {
+            "A": { "type": "integer", "min": 3, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 3, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "{A} × {B} = {A * B} ручек.",
+          "difficulty": 2
+        },
+        {
+          "id": "mt_word_002",
+          "title": "Задача про ряды",
+          "question": "В зале {A} рядов по {B} кресел в каждом ряду. Сколько всего кресел в зале?",
+          "variables": {
+            "A": { "type": "integer", "min": 4, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 5, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "{A} × {B} = {A * B} кресел.",
+          "difficulty": 2
+        },
+        {
+          "id": "mt_three_001",
+          "title": "Умножение суммы на число",
+          "question": "Вычисли: ({A} + {B}) × 3 = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 8, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 8, "step": 1 }
+          },
+          "constraints": [
+            "(A + B) * 3 <= 60"
+          ],
+          "answer": "(A + B) * 3",
+          "answerType": "integer",
+          "explanation": "Сначала сложи: {A} + {B} = {A + B}. Затем умножь: {A + B} × 3 = {(A + B) * 3}.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "division",
+      "title": "Деление и остаток",
+      "tasks": [
+        {
+          "id": "div_exact_001",
+          "title": "Табличное деление",
+          "question": "Вычисли: {A} ÷ {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 10, "max": 81, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A % B == 0"
+          ],
+          "answer": "A / B",
+          "answerType": "integer",
+          "explanation": "{A} ÷ {B} = {A / B}, потому что {B} × {A / B} = {A}.",
+          "difficulty": 1
+        },
+        {
+          "id": "div_rem_001",
+          "title": "Остаток от деления",
+          "question": "Выполни деление с остатком: {A} ÷ {B}. В ответе запиши остаток.",
+          "variables": {
+            "A": { "type": "integer", "min": 10, "max": 60, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A > B",
+            "A % B != 0"
+          ],
+          "answer": "A % B",
+          "answerType": "integer",
+          "explanation": "Ближайшее число, которое делится на {B} — это {A - A % B}. Остаток: {A} - {A - A % B} = {A % B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "div_quot_001",
+          "title": "Неполное частное",
+          "question": "Выполни деление с остатком: {A} ÷ {B}. В ответе запиши неполное частное.",
+          "variables": {
+            "A": { "type": "integer", "min": 15, "max": 80, "step": 1 },
+            "B": { "type": "integer", "min": 3, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A > B",
+            "A % B != 0"
+          ],
+          "answer": "(A - A % B) / B",
+          "answerType": "integer",
+          "explanation": "{A} ÷ {B}: берём наибольшее число, которое делится на {B} — это {A - A % B}. Частное = {A - A % B} ÷ {B} = {(A - A % B) / B}.",
+          "difficulty": 3
+        },
+        {
+          "id": "div_content_001",
+          "title": "Деление по содержанию",
+          "question": "{A} яблок разложили в корзины по {B} яблок в каждой. Сколько получилось корзин?",
+          "variables": {
+            "A": { "type": "integer", "min": 12, "max": 72, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 8, "step": 1 }
+          },
+          "constraints": [
+            "A % B == 0"
+          ],
+          "answer": "A / B",
+          "answerType": "integer",
+          "explanation": "{A} ÷ {B} = {A / B} корзин.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "equations",
+      "title": "Уравнения",
+      "tasks": [
+        {
+          "id": "eq_sum_001",
+          "title": "Неизвестное слагаемое",
+          "question": "Реши уравнение: x + {A} = {B}. Найди x.",
+          "variables": {
+            "A": { "type": "integer", "min": 4, "max": 30, "step": 1 },
+            "B": { "type": "integer", "min": 12, "max": 60, "step": 1 }
+          },
+          "constraints": [
+            "B > A"
+          ],
+          "answer": "B - A",
+          "answerType": "integer",
+          "explanation": "x = {B} - {A} = {B - A}.",
+          "difficulty": 2
+        },
+        {
+          "id": "eq_mul_001",
+          "title": "Неизвестный множитель",
+          "question": "Реши уравнение: {A} × x = {B}. Найди x.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 6, "max": 81, "step": 1 }
+          },
+          "constraints": [
+            "B % A == 0"
+          ],
+          "answer": "B / A",
+          "answerType": "integer",
+          "explanation": "x = {B} ÷ {A} = {B / A}.",
+          "difficulty": 2
+        },
+        {
+          "id": "eq_sub_001",
+          "title": "Неизвестное уменьшаемое",
+          "question": "Реши уравнение: x - {A} = {B}. Найди x.",
+          "variables": {
+            "A": { "type": "integer", "min": 3, "max": 25, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 30, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "x = {A} + {B} = {A + B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "eq_sub_002",
+          "title": "Неизвестное вычитаемое",
+          "question": "Реши уравнение: {A} - x = {B}. Найди x.",
+          "variables": {
+            "A": { "type": "integer", "min": 10, "max": 50, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 20, "step": 1 }
+          },
+          "constraints": [
+            "A > B"
+          ],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "x = {A} - {B} = {A - B}.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "area",
+      "title": "Площадь",
+      "tasks": [
+        {
+          "id": "area_rect_001",
+          "title": "Площадь прямоугольника",
+          "question": "Прямоугольник имеет стороны {A} см и {B} см. Какова его площадь (в кв.см)?",
+          "variables": {
+            "A": { "type": "integer", "min": 3, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "Площадь = {A} × {B} = {A * B} кв.см.",
+          "difficulty": 2
+        },
+        {
+          "id": "area_square_001",
+          "title": "Площадь квадрата",
+          "question": "Найди площадь квадрата со стороной {A} см (в кв.см).",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 12, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * A",
+          "answerType": "integer",
+          "explanation": "Площадь квадрата = сторона × сторона = {A} × {A} = {A * A} кв.см.",
+          "difficulty": 2
+        },
+        {
+          "id": "area_back_001",
+          "title": "Сторона квадрата по площади",
+          "question": "Площадь квадрата равна {A * A} кв.см. Найди длину его стороны (в см).",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 12, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A",
+          "answerType": "integer",
+          "explanation": "Ищем число, которое при умножении на себя даёт {A * A}: это {A}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "fractions",
+      "title": "Доли",
+      "tasks": [
+        {
+          "id": "frac_half_001",
+          "title": "Доля числа",
+          "question": "Найди {P}/{Q} от числа {M}.",
+          "variables": {
+            "P": { "type": "integer", "min": 1, "max": 3, "step": 1 },
+            "Q": { "type": "integer", "min": 2, "max": 6, "step": 1 },
+            "M": { "type": "integer", "min": 6, "max": 60, "step": 1 }
+          },
+          "constraints": [
+            "P < Q",
+            "M % Q == 0"
+          ],
+          "answer": "M / Q * P",
+          "answerType": "integer",
+          "explanation": "Одна часть: {M} ÷ {Q} = {M / Q}. Берём {P} части: {M / Q} × {P} = {M / Q * P}.",
+          "difficulty": 2
+        },
+        {
+          "id": "frac_one_001",
+          "title": "Одна доля",
+          "question": "Сколько составляет 1/{N} от числа {M}?",
+          "variables": {
+            "N": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "M": { "type": "integer", "min": 8, "max": 72, "step": 1 }
+          },
+          "constraints": [
+            "M % N == 0"
+          ],
+          "answer": "M / N",
+          "answerType": "integer",
+          "explanation": "Делим на {N} равные части: {M} ÷ {N} = {M / N}.",
+          "difficulty": 2
+        },
+        {
+          "id": "frac_kg_001",
+          "title": "Доля килограмма",
+          "question": "Сколько граммов составляет 1/{N} килограмма?",
+          "variables": {
+            "N": { "type": "integer", "min": 2, "max": 4, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "1000 / N",
+          "answerType": "integer",
+          "explanation": "1 кг = 1000 г. 1000 ÷ {N} = {1000 / N} г.",
+          "difficulty": 2
+        }
+      ]
+    }
+  ]
+}

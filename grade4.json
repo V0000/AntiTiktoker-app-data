@@ -1,0 +1,330 @@
+{
+  "contentVersion": 2,
+  "subject": "mathematics",
+  "grade": 4,
+  "term": "0",
+  "topics": [
+    {
+      "id": "multidigit",
+      "title": "Многозначные числа",
+      "tasks": [
+        {
+          "id": "md_add_001",
+          "title": "Сложение многозначных чисел",
+          "question": "Вычисли: {A} + {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 1100, "max": 4800, "step": 100 },
+            "B": { "type": "integer", "min": 1200, "max": 4200, "step": 100 }
+          },
+          "constraints": [],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "Складывай поразрядно: {A} + {B} = {A + B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "md_sub_001",
+          "title": "Вычитание многозначных чисел",
+          "question": "Вычисли: {A} - {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2500, "max": 9900, "step": 100 },
+            "B": { "type": "integer", "min": 1200, "max": 2400, "step": 100 }
+          },
+          "constraints": [],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "{A} - {B} = {A - B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "md_mul10_001",
+          "title": "Умножение на 10 и 100",
+          "question": "Вычисли: {A} × 100 = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 99, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 100",
+          "answerType": "integer",
+          "explanation": "При умножении на 100 приписываем два нуля: {A} × 100 = {A * 100}.",
+          "difficulty": 1
+        },
+        {
+          "id": "md_div100_001",
+          "title": "Деление на 100",
+          "question": "Вычисли: {A} ÷ 100 = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 100, "max": 9900, "step": 100 }
+          },
+          "constraints": [],
+          "answer": "A / 100",
+          "answerType": "integer",
+          "explanation": "Убираем два нуля: {A} ÷ 100 = {A / 100}.",
+          "difficulty": 1
+        },
+        {
+          "id": "md_tens_001",
+          "title": "Сколько десятков и сотен",
+          "question": "Сколько всего сотен в числе {A}?",
+          "variables": {
+            "A": { "type": "integer", "min": 100, "max": 999, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "(A - A % 100) / 100",
+          "answerType": "integer",
+          "explanation": "Отбрось десятки и единицы: в числе {A} — {(A - A % 100) / 100} сотни.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "multiplication_big",
+      "title": "Умножение и деление больших чисел",
+      "tasks": [
+        {
+          "id": "mb_mul_001",
+          "title": "Умножение на однозначное число",
+          "question": "Вычисли: {A} × {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 12, "max": 99, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "Умножай в столбик: {A} × {B} = {A * B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "mb_mul_002",
+          "title": "Умножение на круглое число",
+          "question": "Вычисли: {A} × {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 12, "max": 40, "step": 1 },
+            "B": { "type": "integer", "min": 20, "max": 90, "step": 10 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "Умножь {A} на {B / 10} и припиши ноль: получится {A * B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "mb_div_001",
+          "title": "Деление на однозначное число",
+          "question": "Вычисли: {A} ÷ {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 60, "max": 999, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A % B == 0"
+          ],
+          "answer": "A / B",
+          "answerType": "integer",
+          "explanation": "Дели в столбик: {A} ÷ {B} = {A / B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "mb_div_002",
+          "title": "Деление на круглое число",
+          "question": "Вычисли: {A} ÷ 10 = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 100, "max": 990, "step": 10 }
+          },
+          "constraints": [],
+          "answer": "A / 10",
+          "answerType": "integer",
+          "explanation": "Убираем один ноль: {A} ÷ 10 = {A / 10}.",
+          "difficulty": 1
+        }
+      ]
+    },
+    {
+      "id": "fractions",
+      "title": "Дроби",
+      "tasks": [
+        {
+          "id": "fr_part_001",
+          "title": "Часть от числа",
+          "question": "Найди {P}/{Q} от числа {M}.",
+          "variables": {
+            "P": { "type": "integer", "min": 1, "max": 5, "step": 1 },
+            "Q": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "M": { "type": "integer", "min": 9, "max": 90, "step": 1 }
+          },
+          "constraints": [
+            "P < Q",
+            "M % Q == 0"
+          ],
+          "answer": "M / Q * P",
+          "answerType": "integer",
+          "explanation": "Одна часть: {M} ÷ {Q} = {M / Q}. Берём {P} частей: {M / Q} × {P} = {M / Q * P}.",
+          "difficulty": 2
+        },
+        {
+          "id": "fr_kg_001",
+          "title": "Часть килограмма",
+          "question": "Сколько граммов составляет {P}/{Q} килограмма?",
+          "variables": {
+            "P": { "type": "integer", "min": 1, "max": 3, "step": 1 },
+            "Q": { "type": "integer", "min": 2, "max": 8, "step": 1 }
+          },
+          "constraints": [
+            "P < Q",
+            "1000 % Q == 0"
+          ],
+          "answer": "1000 / Q * P",
+          "answerType": "integer",
+          "explanation": "1 кг = 1000 г. Одна часть: 1000 ÷ {Q} = {1000 / Q} г. Берём {P}: {1000 / Q * P} г.",
+          "difficulty": 2
+        },
+        {
+          "id": "fr_num_001",
+          "title": "Число по его части",
+          "question": "{P}/{Q} от некоторого числа равны {M / Q * P}. Найди это число.",
+          "variables": {
+            "P": { "type": "integer", "min": 1, "max": 3, "step": 1 },
+            "Q": { "type": "integer", "min": 4, "max": 9, "step": 1 },
+            "M": { "type": "integer", "min": 8, "max": 72, "step": 1 }
+          },
+          "constraints": [
+            "P < Q",
+            "M % Q == 0"
+          ],
+          "answer": "M",
+          "answerType": "integer",
+          "explanation": "Одна часть = {M / Q * P} ÷ {P} = {M / Q}. Всё число = {M / Q} × {Q} = {M}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "movement",
+      "title": "Задачи на движение",
+      "tasks": [
+        {
+          "id": "mv_path_001",
+          "title": "Путь, скорость и время",
+          "question": "Велосипедист ехал {T} ч со скоростью {V} км/ч. Какой путь он проехал (в км)?",
+          "variables": {
+            "T": { "type": "integer", "min": 2, "max": 6, "step": 1 },
+            "V": { "type": "integer", "min": 7, "max": 18, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "T * V",
+          "answerType": "integer",
+          "explanation": "Путь = скорость × время = {V} × {T} = {T * V} км.",
+          "difficulty": 2
+        },
+        {
+          "id": "mv_speed_001",
+          "title": "Найди скорость",
+          "question": "Поезд проехал {S} км за {T} ч. Найди его скорость (в км/ч).",
+          "variables": {
+            "S": { "type": "integer", "min": 120, "max": 720, "step": 10 },
+            "T": { "type": "integer", "min": 2, "max": 8, "step": 1 }
+          },
+          "constraints": [
+            "S % T == 0"
+          ],
+          "answer": "S / T",
+          "answerType": "integer",
+          "explanation": "Скорость = путь ÷ время = {S} ÷ {T} = {S / T} км/ч.",
+          "difficulty": 2
+        },
+        {
+          "id": "mv_meet_001",
+          "title": "Встречное движение",
+          "question": "Два пешехода идут навстречу друг другу. Скорость первого — {P} км/ч, второго — {Q} км/ч. Через сколько часов они встретятся, если расстояние между ними {S} км?",
+          "variables": {
+            "P": { "type": "integer", "min": 3, "max": 7, "step": 1 },
+            "Q": { "type": "integer", "min": 3, "max": 7, "step": 1 },
+            "S": { "type": "integer", "min": 12, "max": 56, "step": 2 }
+          },
+          "constraints": [
+            "S % (P + Q) == 0"
+          ],
+          "answer": "S / (P + Q)",
+          "answerType": "integer",
+          "explanation": "Скорость сближения: {P} + {Q} = {P + Q} км/ч. Время: {S} ÷ {P + Q} = {S / (P + Q)} ч.",
+          "difficulty": 3
+        },
+        {
+          "id": "mv_time_001",
+          "title": "Найди время",
+          "question": "Лодка двигалась со скоростью {V} км/ч и проплыла {S} км. Сколько часов она была в пути?",
+          "variables": {
+            "V": { "type": "integer", "min": 4, "max": 12, "step": 1 },
+            "S": { "type": "integer", "min": 12, "max": 96, "step": 2 }
+          },
+          "constraints": [
+            "S % V == 0"
+          ],
+          "answer": "S / V",
+          "answerType": "integer",
+          "explanation": "Время = путь ÷ скорость = {S} ÷ {V} = {S / V} ч.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "units",
+      "title": "Единицы измерения",
+      "tasks": [
+        {
+          "id": "un_m_001",
+          "title": "Метры в сантиметры",
+          "question": "Сколько сантиметров в {A} метрах?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 25, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 100",
+          "answerType": "integer",
+          "explanation": "1 м = 100 см: {A} × 100 = {A * 100} см.",
+          "difficulty": 1
+        },
+        {
+          "id": "un_hour_001",
+          "title": "Часы в минуты",
+          "question": "Сколько минут в {A} часах?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 60",
+          "answerType": "integer",
+          "explanation": "1 ч = 60 мин: {A} × 60 = {A * 60} мин.",
+          "difficulty": 1
+        },
+        {
+          "id": "un_ton_001",
+          "title": "Тонны в килограммы",
+          "question": "Сколько килограммов в {A} тоннах?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 1000",
+          "answerType": "integer",
+          "explanation": "1 т = 1000 кг: {A} × 1000 = {A * 1000} кг.",
+          "difficulty": 1
+        },
+        {
+          "id": "un_back_001",
+          "title": "Перевод в метры",
+          "question": "Сколько метров в {A} сантиметрах?",
+          "variables": {
+            "A": { "type": "integer", "min": 200, "max": 2500, "step": 100 }
+          },
+          "constraints": [],
+          "answer": "A / 100",
+          "answerType": "integer",
+          "explanation": "100 см = 1 м: {A} ÷ 100 = {A / 100} м.",
+          "difficulty": 2
+        }
+      ]
+    }
+  ]
+}

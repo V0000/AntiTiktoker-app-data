@@ -1,0 +1,372 @@
+{
+  "contentVersion": 2,
+  "subject": "mathematics",
+  "grade": 5,
+  "term": "0",
+  "topics": [
+    {
+      "id": "powers",
+      "title": "Степень числа",
+      "tasks": [
+        {
+          "id": "pw_square_001",
+          "title": "Квадрат числа",
+          "question": "Вычисли: {A}² = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 20, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * A",
+          "answerType": "integer",
+          "explanation": "{A}² = {A} × {A} = {A * A}.",
+          "difficulty": 1
+        },
+        {
+          "id": "pw_cube_001",
+          "title": "Куб числа",
+          "question": "Вычисли: {A}³ = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 6, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "pow(A, 3)",
+          "answerType": "integer",
+          "explanation": "{A}³ = {A} × {A} × {A} = {pow(A, 3)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "pw_two_001",
+          "title": "Степени двойки",
+          "question": "Вычисли: 2^{N} = ?",
+          "variables": {
+            "N": { "type": "integer", "min": 1, "max": 10, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "pow(2, N)",
+          "answerType": "integer",
+          "explanation": "2^{N} — перемножаем 2 само на себя {N} раз: {pow(2, N)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "pw_ten_001",
+          "title": "Степени десятки",
+          "question": "Вычисли: 10^{N} = ?",
+          "variables": {
+            "N": { "type": "integer", "min": 1, "max": 6, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "pow(10, N)",
+          "answerType": "integer",
+          "explanation": "10^{N} — это единица и {N} нулей: {pow(10, N)}.",
+          "difficulty": 1
+        }
+      ]
+    },
+    {
+      "id": "common_fractions",
+      "title": "Обыкновенные дроби",
+      "tasks": [
+        {
+          "id": "cf_reduce_001",
+          "title": "Сокращение дроби",
+          "question": "Сократи дробь {A}/{B}. В ответе укажи числитель полученной дроби.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 30, "step": 1 },
+            "B": { "type": "integer", "min": 4, "max": 48, "step": 1 }
+          },
+          "constraints": [
+            "A < B",
+            "B % A != 0",
+            "gcd(A, B) != 1"
+          ],
+          "answer": "A / gcd(A, B)",
+          "answerType": "integer",
+          "explanation": "НОД({A}, {B}) = {gcd(A, B)}. Делим числитель и знаменатель на {gcd(A, B)}: числитель станет {A / gcd(A, B)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "cf_add_001",
+          "title": "Сложение дробей с общим знаменателем",
+          "question": "Вычисли: {A}/{C} + {B}/{C}. В ответе укажи числитель суммы (сокращать не нужно).",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 7, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 7, "step": 1 },
+            "C": { "type": "integer", "min": 8, "max": 15, "step": 1 }
+          },
+          "constraints": [
+            "A + B < C"
+          ],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "Знаменатель общий, складываем числители: {A} + {B} = {A + B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "cf_sub_001",
+          "title": "Вычитание дробей с общим знаменателем",
+          "question": "Вычисли: {B}/{C} - {A}/{C}. В ответе укажи числитель разности (сокращать не нужно).",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 5, "step": 1 },
+            "B": { "type": "integer", "min": 6, "max": 12, "step": 1 },
+            "C": { "type": "integer", "min": 13, "max": 20, "step": 1 }
+          },
+          "constraints": [
+            "B > A"
+          ],
+          "answer": "B - A",
+          "answerType": "integer",
+          "explanation": "Знаменатель общий, вычитаем числители: {B} - {A} = {B - A}.",
+          "difficulty": 1
+        },
+        {
+          "id": "cf_mixed_001",
+          "title": "Смешанное число",
+          "question": "Представь неправильную дробь {A}/{B} в виде смешанного числа. В ответе укажи его целую часть.",
+          "variables": {
+            "A": { "type": "integer", "min": 9, "max": 47, "step": 1 },
+            "B": { "type": "integer", "min": 3, "max": 8, "step": 1 }
+          },
+          "constraints": [
+            "A > B",
+            "A % B != 0"
+          ],
+          "answer": "(A - A % B) / B",
+          "answerType": "integer",
+          "explanation": "Делим с остатком: {A} = {B} × {(A - A % B) / B} + {A % B}. Целая часть равна {(A - A % B) / B}.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "decimals",
+      "title": "Десятичные дроби",
+      "tasks": [
+        {
+          "id": "dc_add_001",
+          "title": "Сложение десятичных дробей",
+          "question": "Вычисли: {A} + {B} = ?",
+          "variables": {
+            "A": { "type": "decimal", "min": 0.5, "max": 9.5, "step": 0.1 },
+            "B": { "type": "decimal", "min": 0.5, "max": 9.5, "step": 0.1 }
+          },
+          "constraints": [],
+          "answer": "A + B",
+          "answerType": "decimal",
+          "explanation": "Запиши столбиком, запятая под запятой: {A} + {B} = {A + B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "dc_sub_001",
+          "title": "Вычитание десятичных дробей",
+          "question": "Вычисли: {A} - {B} = ?",
+          "variables": {
+            "A": { "type": "decimal", "min": 2.5, "max": 9.9, "step": 0.1 },
+            "B": { "type": "decimal", "min": 0.5, "max": 2.4, "step": 0.1 }
+          },
+          "constraints": [
+            "A > B"
+          ],
+          "answer": "A - B",
+          "answerType": "decimal",
+          "explanation": "{A} - {B} = {A - B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "dc_mul10_001",
+          "title": "Умножение на 10",
+          "question": "Вычисли: {A} × 10 = ?",
+          "variables": {
+            "A": { "type": "decimal", "min": 0.2, "max": 9.9, "step": 0.1 }
+          },
+          "constraints": [],
+          "answer": "A * 10",
+          "answerType": "decimal",
+          "explanation": "При умножении на 10 запятая сдвигается на один знак вправо: {A} × 10 = {A * 10}.",
+          "difficulty": 1
+        },
+        {
+          "id": "dc_mul_001",
+          "title": "Умножение десятичных дробей",
+          "question": "Вычисли: {A} × {B} = ?",
+          "variables": {
+            "A": { "type": "decimal", "min": 0.2, "max": 4.8, "step": 0.1 },
+            "B": { "type": "decimal", "min": 0.2, "max": 2.4, "step": 0.1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "decimal",
+          "explanation": "Умножь без запятых, затем отдели нужные знаки: {A} × {B} ≈ {A * B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "dc_div10_001",
+          "title": "Деление на 10",
+          "question": "Вычисли: {A} ÷ 10 = ?",
+          "variables": {
+            "A": { "type": "decimal", "min": 1.5, "max": 99.5, "step": 0.1 }
+          },
+          "constraints": [],
+          "answer": "A / 10",
+          "answerType": "decimal",
+          "explanation": "При делении на 10 запятая сдвигается на один знак влево: {A} ÷ 10 = {A / 10}.",
+          "difficulty": 1
+        }
+      ]
+    },
+    {
+      "id": "percents",
+      "title": "Проценты",
+      "tasks": [
+        {
+          "id": "pc_of_001",
+          "title": "Процент от числа",
+          "question": "Найди {P}% от числа {N}.",
+          "variables": {
+            "P": { "type": "integer", "min": 5, "max": 25, "step": 5 },
+            "N": { "type": "integer", "min": 20, "max": 200, "step": 20 }
+          },
+          "constraints": [],
+          "answer": "N * P / 100",
+          "answerType": "integer",
+          "explanation": "{P}% — это {P}/100. {N} × {P} ÷ 100 = {N * P / 100}.",
+          "difficulty": 2
+        },
+        {
+          "id": "pc_back_001",
+          "title": "Число по проценту",
+          "question": "Найди число, если {P}% этого числа равны {N * P / 100}.",
+          "variables": {
+            "P": { "type": "integer", "min": 5, "max": 25, "step": 5 },
+            "N": { "type": "integer", "min": 100, "max": 900, "step": 100 }
+          },
+          "constraints": [],
+          "answer": "N",
+          "answerType": "integer",
+          "explanation": "Сначала найди 1%: {N * P / 100} ÷ {P} = {N / 100}. Затем умножь на 100: {N / 100} × 100 = {N}.",
+          "difficulty": 3
+        },
+        {
+          "id": "pc_word_001",
+          "title": "Задача на скидку",
+          "question": "Куртка стоит {N} руб. На распродаже её цена снизилась на {P}%. Какова новая цена куртки (в руб.)?",
+          "variables": {
+            "N": { "type": "integer", "min": 100, "max": 900, "step": 100 },
+            "P": { "type": "integer", "min": 5, "max": 25, "step": 5 }
+          },
+          "constraints": [],
+          "answer": "N - N * P / 100",
+          "answerType": "integer",
+          "explanation": "Скидка: {N} × {P} ÷ 100 = {N * P / 100} руб. Новая цена: {N} - {N * P / 100} = {N - N * P / 100} руб.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "title": "Среднее арифметическое",
+      "tasks": [
+        {
+          "id": "av_two_001",
+          "title": "Среднее двух чисел",
+          "question": "Найди среднее арифметическое чисел {A} и {B}.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 40, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 40, "step": 1 }
+          },
+          "constraints": [
+            "(A + B) % 2 == 0"
+          ],
+          "answer": "(A + B) / 2",
+          "answerType": "integer",
+          "explanation": "Среднее = ({A} + {B}) ÷ 2 = {A + B} ÷ 2 = {(A + B) / 2}.",
+          "difficulty": 1
+        },
+        {
+          "id": "av_three_001",
+          "title": "Среднее трёх чисел",
+          "question": "Найди среднее арифметическое чисел {A}, {B} и {C}.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 30, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 30, "step": 1 },
+            "C": { "type": "integer", "min": 1, "max": 30, "step": 1 }
+          },
+          "constraints": [
+            "(A + B + C) % 3 == 0"
+          ],
+          "answer": "(A + B + C) / 3",
+          "answerType": "integer",
+          "explanation": "Сумма: {A} + {B} + {C} = {A + B + C}. Среднее = {A + B + C} ÷ 3 = {(A + B + C) / 3}.",
+          "difficulty": 2
+        },
+        {
+          "id": "av_back_001",
+          "title": "Обратная задача на среднее",
+          "question": "Среднее арифметическое двух чисел равно {N}. Одно из чисел — {A}. Найди второе число.",
+          "variables": {
+            "N": { "type": "integer", "min": 10, "max": 40, "step": 1 },
+            "A": { "type": "integer", "min": 2, "max": 18, "step": 1 }
+          },
+          "constraints": [
+            "2 * N - A > 0"
+          ],
+          "answer": "2 * N - A",
+          "answerType": "integer",
+          "explanation": "Сумма двух чисел: {N} × 2 = {2 * N}. Второе число: {2 * N} - {A} = {2 * N - A}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "word_problems",
+      "title": "Текстовые задачи",
+      "tasks": [
+        {
+          "id": "wp_cost_001",
+          "title": "Цена и стоимость",
+          "question": "Одна ручка стоит {P} руб. Сколько стоят {N} таких ручек (в руб.)?",
+          "variables": {
+            "P": { "type": "integer", "min": 15, "max": 90, "step": 5 },
+            "N": { "type": "integer", "min": 3, "max": 12, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "P * N",
+          "answerType": "integer",
+          "explanation": "Стоимость = цена × количество: {P} × {N} = {P * N} руб.",
+          "difficulty": 1
+        },
+        {
+          "id": "wp_price_back_001",
+          "title": "Найди цену",
+          "question": "За {N} одинаковых тетрадей заплатили {S} руб. Сколько стоит одна тетрадь (в руб.)?",
+          "variables": {
+            "N": { "type": "integer", "min": 3, "max": 9, "step": 1 },
+            "S": { "type": "integer", "min": 30, "max": 180, "step": 5 }
+          },
+          "constraints": [
+            "S % N == 0"
+          ],
+          "answer": "S / N",
+          "answerType": "integer",
+          "explanation": "Цена = стоимость ÷ количество: {S} ÷ {N} = {S / N} руб.",
+          "difficulty": 2
+        },
+        {
+          "id": "wp_area_001",
+          "title": "Задача на скорость",
+          "question": "Автомобиль проехал {S} км со скоростью {V} км/ч. Сколько часов он был в пути?",
+          "variables": {
+            "S": { "type": "integer", "min": 60, "max": 480, "step": 10 },
+            "V": { "type": "integer", "min": 40, "max": 90, "step": 5 }
+          },
+          "constraints": [
+            "S % V == 0"
+          ],
+          "answer": "S / V",
+          "answerType": "integer",
+          "explanation": "Время = путь ÷ скорость: {S} ÷ {V} = {S / V} ч.",
+          "difficulty": 2
+        }
+      ]
+    }
+  ]
+}

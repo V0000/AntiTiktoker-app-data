@@ -1,0 +1,343 @@
+{
+  "contentVersion": 2,
+  "subject": "mathematics",
+  "grade": 7,
+  "term": "0",
+  "topics": [
+    {
+      "id": "powers",
+      "title": "Степени",
+      "tasks": [
+        {
+          "id": "pw_calc_001",
+          "title": "Возведение в степень",
+          "question": "Вычисли: {A}^{B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 3, "step": 1 }
+          },
+          "constraints": [
+            "pow(A, B) <= 2500"
+          ],
+          "answer": "pow(A, B)",
+          "answerType": "integer",
+          "explanation": "{A}^{B} — перемножаем {A} само на себя {B} раза: {pow(A, B)}.",
+          "difficulty": 1
+        },
+        {
+          "id": "pw_props_001",
+          "title": "Свойства степеней",
+          "question": "Вычисли: {A}^{B} × {A} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 6, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 3, "step": 1 }
+          },
+          "constraints": [
+            "pow(A, B + 1) <= 2500"
+          ],
+          "answer": "pow(A, B + 1)",
+          "answerType": "integer",
+          "explanation": "При умножении степеней с одинаковым основанием показатели складываются: {A}^{B} × {A} = {A}^{B + 1} = {pow(A, B + 1)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "pw_props_002",
+          "title": "Деление степеней",
+          "question": "Вычисли: {A}^{B} ÷ {A} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 6, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 4, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "pow(A, B - 1)",
+          "answerType": "integer",
+          "explanation": "При делении степеней показатели вычитаются: {A}^{B} ÷ {A} = {A}^{B - 1} = {pow(A, B - 1)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "pw_square_sum_001",
+          "title": "Квадрат суммы",
+          "question": "Вычисли значение выражения {A}² + 2 × {A} × {B} + {B}² при заданных числах.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 12, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "pow(A + B, 2)",
+          "answerType": "integer",
+          "explanation": "Это квадрат суммы: ({A} + {B})² = {(A + B)}² = {pow(A + B, 2)}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "expressions",
+      "title": "Упрощение выражений",
+      "tasks": [
+        {
+          "id": "ex_like_001",
+          "title": "Подобные слагаемые",
+          "question": "Упрости выражение {A}x + {B} + {C}x. В ответе укажи коэффициент при x.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 15, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 20, "step": 1 },
+            "C": { "type": "integer", "min": 2, "max": 15, "step": 1 }
+          },
+          "constraints": [
+            "A + C != 0"
+          ],
+          "answer": "A + C",
+          "answerType": "integer",
+          "explanation": "Складываем коэффициенты при x: {A} + {C} = {A + C}. Получается {A + C}x + {B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "ex_like_002",
+          "title": "Разность подобных слагаемых",
+          "question": "Упрости выражение {A}x - {B}x + {C}. В ответе укажи коэффициент при x.",
+          "variables": {
+            "A": { "type": "integer", "min": 5, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 4, "step": 1 },
+            "C": { "type": "integer", "min": 1, "max": 20, "step": 1 }
+          },
+          "constraints": [
+            "A - B != 0"
+          ],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "Вычитаем коэффициенты: {A} - {B} = {A - B}. Получается {A - B}x + {C}.",
+          "difficulty": 1
+        },
+        {
+          "id": "ex_bracket_001",
+          "title": "Раскрытие скобок",
+          "question": "Упрости выражение {A} × ({B}x + {C}). В ответе укажи коэффициент при x.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "C": { "type": "integer", "min": 1, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "Раскрываем скобки: {A} × {B}x + {A} × {C}. Коэффициент при x равен {A * B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "ex_diffsq_001",
+          "title": "Разность квадратов",
+          "question": "Вычисли: ({A * A} - {B * B}) ÷ ({A} - {B}).",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 19, "step": 1 }
+          },
+          "constraints": [
+            "A != B"
+          ],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "По формуле разности квадратов: {A}² - {B}² = ({A} - {B})({A} + {B}). Делим на ({A} - {B}), остаётся {A} + {B} = {A + B}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "linear_equations",
+      "title": "Линейные уравнения",
+      "tasks": [
+        {
+          "id": "le_basic_001",
+          "title": "Уравнение вида ax + b = c",
+          "question": "Реши уравнение: {A}x + {B} = {C}. Найди x.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 15, "step": 1 },
+            "C": { "type": "integer", "min": 12, "max": 90, "step": 1 }
+          },
+          "constraints": [
+            "(C - B) % A == 0"
+          ],
+          "answer": "(C - B) / A",
+          "answerType": "integer",
+          "explanation": "{A}x = {C} - {B} = {C - B}. x = {C - B} ÷ {A} = {(C - B) / A}.",
+          "difficulty": 2
+        },
+        {
+          "id": "le_basic_002",
+          "title": "Уравнение вида ax - b = c",
+          "question": "Реши уравнение: {A}x - {B} = {C}. Найди x.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 15, "step": 1 },
+            "C": { "type": "integer", "min": 2, "max": 60, "step": 1 }
+          },
+          "constraints": [
+            "(C + B) % A == 0"
+          ],
+          "answer": "(C + B) / A",
+          "answerType": "integer",
+          "explanation": "{A}x = {C} + {B} = {C + B}. x = {C + B} ÷ {A} = {(C + B) / A}.",
+          "difficulty": 2
+        },
+        {
+          "id": "le_div_001",
+          "title": "Уравнение с делением",
+          "question": "Реши уравнение: x ÷ {A} = {B}. Найди x.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 15, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "x = {B} × {A} = {A * B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "le_neg_001",
+          "title": "Уравнение с отрицательным корнем",
+          "question": "Реши уравнение: {A}x + {B} = {C}. Найди x.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 20, "max": 60, "step": 1 },
+            "C": { "type": "integer", "min": 2, "max": 12, "step": 1 }
+          },
+          "constraints": [
+            "(C - B) % A == 0",
+            "C < B"
+          ],
+          "answer": "(C - B) / A",
+          "answerType": "integer",
+          "explanation": "{A}x = {C} - {B} = {C - B}. x = {C - B} ÷ {A} = {(C - B) / A}.",
+          "difficulty": 3
+        },
+        {
+          "id": "le_func_001",
+          "title": "Значение функции",
+          "question": "Линейная функция задана формулой y = {A}x + ({B}). Найди y, если x = {X}.",
+          "variables": {
+            "A": { "type": "integer", "min": -5, "max": 5, "step": 1 },
+            "B": { "type": "integer", "min": -9, "max": 9, "step": 1 },
+            "X": { "type": "integer", "min": -6, "max": 6, "step": 1 }
+          },
+          "constraints": [
+            "A != 0"
+          ],
+          "answer": "A * X + B",
+          "answerType": "integer",
+          "explanation": "Подставляем: y = {A} × ({X}) + ({B}) = {A * X + B}.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "title": "Формулы",
+      "tasks": [
+        {
+          "id": "fm_path_001",
+          "title": "Формула пути",
+          "question": "Найди путь S (в км), если скорость v = {V} км/ч и время t = {T} ч. (S = v × t)",
+          "variables": {
+            "V": { "type": "integer", "min": 25, "max": 110, "step": 5 },
+            "T": { "type": "integer", "min": 2, "max": 8, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "V * T",
+          "answerType": "integer",
+          "explanation": "S = {V} × {T} = {V * T} км.",
+          "difficulty": 1
+        },
+        {
+          "id": "fm_perimeter_001",
+          "title": "Формула периметра",
+          "question": "Найди периметр прямоугольника (в см), если a = {A} см и b = {B} см. (P = 2 × (a + b))",
+          "variables": {
+            "A": { "type": "integer", "min": 3, "max": 40, "step": 1 },
+            "B": { "type": "integer", "min": 3, "max": 40, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "(A + B) * 2",
+          "answerType": "integer",
+          "explanation": "P = 2 × ({A} + {B}) = {(A + B) * 2} см.",
+          "difficulty": 1
+        },
+        {
+          "id": "fm_temp_001",
+          "title": "Перевод температуры",
+          "question": "Температура по Цельсию равна {C}°. Найди температуру по Фаренгейту. (F = 1.8 × C + 32)",
+          "variables": {
+            "C": { "type": "integer", "min": 0, "max": 40, "step": 5 }
+          },
+          "constraints": [],
+          "answer": "1.8 * C + 32",
+          "answerType": "integer",
+          "explanation": "F = 1.8 × {C} + 32 = {1.8 * C + 32}°F.",
+          "difficulty": 2
+        },
+        {
+          "id": "fm_cost_001",
+          "title": "Формула стоимости",
+          "question": "Найди стоимость покупки C (в руб.), если цена a = {P} руб. и количество n = {N}. (C = a × n)",
+          "variables": {
+            "P": { "type": "integer", "min": 20, "max": 250, "step": 5 },
+            "N": { "type": "integer", "min": 3, "max": 15, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "P * N",
+          "answerType": "integer",
+          "explanation": "C = {P} × {N} = {P * N} руб.",
+          "difficulty": 1
+        }
+      ]
+    },
+    {
+      "id": "geometry",
+      "title": "Начала геометрии",
+      "tasks": [
+        {
+          "id": "ge_adjacent_001",
+          "title": "Смежные углы",
+          "question": "Один из смежных углов равен {A}°. Найди второй угол (в градусах).",
+          "variables": {
+            "A": { "type": "integer", "min": 25, "max": 155, "step": 5 }
+          },
+          "constraints": [],
+          "answer": "180 - A",
+          "answerType": "integer",
+          "explanation": "Сумма смежных углов равна 180°: 180 - {A} = {180 - A}°.",
+          "difficulty": 1
+        },
+        {
+          "id": "ge_triangle_001",
+          "title": "Углы треугольника",
+          "question": "Два угла треугольника равны {A}° и {B}°. Найди третий угол (в градусах).",
+          "variables": {
+            "A": { "type": "integer", "min": 20, "max": 80, "step": 5 },
+            "B": { "type": "integer", "min": 20, "max": 80, "step": 5 }
+          },
+          "constraints": [
+            "A + B < 180"
+          ],
+          "answer": "180 - A - B",
+          "answerType": "integer",
+          "explanation": "Сумма углов треугольника 180°: 180 - {A} - {B} = {180 - A - B}°.",
+          "difficulty": 2
+        },
+        {
+          "id": "ge_vertical_001",
+          "title": "Сумма вертикальных углов",
+          "question": "При пересечении двух прямых один из углов равен {A}°. Найди смежный с ним угол (в градусах).",
+          "variables": {
+            "A": { "type": "integer", "min": 20, "max": 160, "step": 10 }
+          },
+          "constraints": [],
+          "answer": "180 - A",
+          "answerType": "integer",
+          "explanation": "Смежный угол: 180 - {A} = {180 - A}°.",
+          "difficulty": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "contentVersion": 2,
+  "subject": "mathematics",
+  "grade": 9,
+  "term": "0",
+  "topics": [
+    {
+      "id": "arithmetic_progression",
+      "title": "Арифметическая прогрессия",
+      "tasks": [
+        {
+          "id": "ap_member_001",
+          "title": "N-й член прогрессии",
+          "question": "В арифметической прогрессии первый член равен {A}, разность d = {D}. Найди {N}-й член прогрессии.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 15, "step": 1 },
+            "D": { "type": "integer", "min": 2, "max": 7, "step": 1 },
+            "N": { "type": "integer", "min": 5, "max": 20, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A + (N - 1) * D",
+          "answerType": "integer",
+          "explanation": "an = a1 + (n - 1) × d = {A} + ({N} - 1) × {D} = {A + (N - 1) * D}.",
+          "difficulty": 2
+        },
+        {
+          "id": "ap_sum_nat_001",
+          "title": "Сумма первых натуральных чисел",
+          "question": "Найди сумму первых {N} натуральных чисел.",
+          "variables": {
+            "N": { "type": "integer", "min": 5, "max": 40, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "N * (N + 1) / 2",
+          "answerType": "integer",
+          "explanation": "S = n × (n + 1) ÷ 2 = {N} × {N + 1} ÷ 2 = {N * (N + 1) / 2}.",
+          "difficulty": 2
+        },
+        {
+          "id": "ap_sum_001",
+          "title": "Сумма первых членов",
+          "question": "В арифметической прогрессии a1 = {A}, d = {D}. Найди сумму первых {N} членов.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 12, "step": 1 },
+            "D": { "type": "integer", "min": 2, "max": 6, "step": 1 },
+            "N": { "type": "integer", "min": 4, "max": 15, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "(2 * A + (N - 1) * D) * N / 2",
+          "answerType": "integer",
+          "explanation": "Sn = (2 × a1 + (n - 1) × d) × n ÷ 2 = ({2 * A} + {N - 1} × {D}) × {N} ÷ 2 = {(2 * A + (N - 1) * D) * N / 2}.",
+          "difficulty": 3
+        },
+        {
+          "id": "ap_diff_001",
+          "title": "Найди разность прогрессии",
+          "question": "В арифметической прогрессии a1 = {A} и a2 = {A + D}. Найди разность прогрессии d.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 20, "step": 1 },
+            "D": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "D",
+          "answerType": "integer",
+          "explanation": "d = a2 - a1 = {A + D} - {A} = {D}.",
+          "difficulty": 1
+        }
+      ]
+    },
+    {
+      "id": "geometric_progression",
+      "title": "Геометрическая прогрессия",
+      "tasks": [
+        {
+          "id": "gp_member_001",
+          "title": "N-й член прогрессии",
+          "question": "В геометрической прогрессии первый член равен {A}, знаменатель q = {Q}. Найди {N}-й член прогрессии.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 4, "step": 1 },
+            "Q": { "type": "integer", "min": 2, "max": 3, "step": 1 },
+            "N": { "type": "integer", "min": 2, "max": 8, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * pow(Q, N - 1)",
+          "answerType": "integer",
+          "explanation": "bn = b1 × q^(n − 1) = {A} × {Q} в степени {N - 1} = {A * pow(Q, N - 1)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "gp_sum_001",
+          "title": "Сумма первых членов",
+          "question": "В геометрической прогрессии b1 = {A}, q = {Q}. Найди сумму первых {N} членов.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 4, "step": 1 },
+            "Q": { "type": "integer", "min": 2, "max": 3, "step": 1 },
+            "N": { "type": "integer", "min": 2, "max": 7, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * (pow(Q, N) - 1) / (Q - 1)",
+          "answerType": "integer",
+          "explanation": "Sn = b1 × (q^n − 1) ÷ (q − 1) = {A} × ({pow(Q, N)} − 1) ÷ {Q - 1} = {A * (pow(Q, N) - 1) / (Q - 1)}.",
+          "difficulty": 3
+        },
+        {
+          "id": "gp_next_001",
+          "title": "Следующий член прогрессии",
+          "question": "В геометрической прогрессии известны два члена: b1 = {A} и b2 = {A * Q}. Найди b3.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 5, "step": 1 },
+            "Q": { "type": "integer", "min": 2, "max": 4, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * Q * Q",
+          "answerType": "integer",
+          "explanation": "Каждый член умножается на {Q}: b3 = {A * Q} × {Q} = {A * Q * Q}.",
+          "difficulty": 1
+        }
+      ]
+    },
+    {
+      "id": "inequalities",
+      "title": "Неравенства",
+      "tasks": [
+        {
+          "id": "in_linear_001",
+          "title": "Наименьшее целое решение",
+          "question": "Решите неравенство x + {A} > {B}. В ответе укажите наименьшее целое решение.",
+          "variables": {
+            "A": { "type": "integer", "min": -9, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": -9, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "B - A + 1",
+          "answerType": "integer",
+          "explanation": "x > {B} - ({A}), то есть x > {B - A}. Наименьшее целое: {B - A + 1}.",
+          "difficulty": 2
+        },
+        {
+          "id": "in_twox_001",
+          "title": "Неравенство с коэффициентом",
+          "question": "Решите неравенство 2x > {B}. В ответе укажите наименьшее целое решение.",
+          "variables": {
+            "B": { "type": "integer", "min": -10, "max": 10, "step": 2 }
+          },
+          "constraints": [],
+          "answer": "B / 2 + 1",
+          "answerType": "integer",
+          "explanation": "x > {B} ÷ 2, то есть x > {B / 2}. Наименьшее целое: {B / 2 + 1}.",
+          "difficulty": 2
+        },
+        {
+          "id": "in_ax_001",
+          "title": "Неравенство вида ax > b",
+          "question": "Решите неравенство {A}x > {B}. В ответе укажите наименьшее целое положительное решение.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 6, "step": 1 },
+            "B": { "type": "integer", "min": 4, "max": 30, "step": 1 }
+          },
+          "constraints": [
+            "B % A != 0"
+          ],
+          "answer": "(B - B % A) / A + 1",
+          "answerType": "integer",
+          "explanation": "x > {B} ÷ {A} ≈ {B / A}. Наименьшее целое число, большее {B / A}: {(B - B % A) / A + 1}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "combinatorics",
+      "title": "Комбинаторика",
+      "tasks": [
+        {
+          "id": "cb_pairs_001",
+          "title": "Количество пар",
+          "question": "В классе {N} учеников. Сколькими способами можно выбрать из них пару дежурных?",
+          "variables": {
+            "N": { "type": "integer", "min": 4, "max": 25, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "N * (N - 1) / 2",
+          "answerType": "integer",
+          "explanation": "Каждый ученик образует пару с {N - 1} другим; пары считаются дважды, поэтому делим на 2: {N} × {N - 1} ÷ 2 = {N * (N - 1) / 2}.",
+          "difficulty": 2
+        },
+        {
+          "id": "cb_cartesian_001",
+          "title": "Правило умножения",
+          "question": "На празднике {A} ведущих и {B} музыкантов. Сколькими способами можно составить пару «ведущий + музыкант»?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "Каждый ведущий может выступать с каждым музыкантом: {A} × {B} = {A * B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "cb_triples_001",
+          "title": "Количество троек",
+          "question": "В спортзале {N} учеников. Сколькими способами можно выбрать из них троих для эстафеты?",
+          "variables": {
+            "N": { "type": "integer", "min": 4, "max": 15, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "N * (N - 1) * (N - 2) / 6",
+          "answerType": "integer",
+          "explanation": "Число сочетаний из {N} по 3: {N} × {N - 1} × {N - 2} ÷ 6 = {N * (N - 1) * (N - 2) / 6}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "functions",
+      "title": "Функции и графики",
+      "tasks": [
+        {
+          "id": "fn_linear_001",
+          "title": "Значение линейной функции",
+          "question": "Функция задана формулой y = {A}x + ({B}). Найди y при x = {X}.",
+          "variables": {
+            "A": { "type": "integer", "min": -6, "max": 6, "step": 1 },
+            "B": { "type": "integer", "min": -9, "max": 9, "step": 1 },
+            "X": { "type": "integer", "min": -5, "max": 5, "step": 1 }
+          },
+          "constraints": [
+            "A != 0"
+          ],
+          "answer": "A * X + B",
+          "answerType": "integer",
+          "explanation": "y = {A} × ({X}) + ({B}) = {A * X + B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "fn_parabola_001",
+          "title": "Значение квадратичной функции",
+          "question": "Функция задана формулой y = x² + ({A})·x + ({B}). Найди y при x = {X}.",
+          "variables": {
+            "A": { "type": "integer", "min": -6, "max": 6, "step": 1 },
+            "B": { "type": "integer", "min": -9, "max": 9, "step": 1 },
+            "X": { "type": "integer", "min": -4, "max": 4, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "X * X - A * X + B",
+          "answerType": "integer",
+          "explanation": "y = ({X})² + {A} × ({X}) + ({B}) = {X * X} + ({A * X}) + ({B}) = {X * X - A * X + B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "fn_vertex_001",
+          "title": "Вершина параболы",
+          "question": "Парабола задана формулой y = x² + ({A})·x + ({B}). Найди абсциссу вершины параболы.",
+          "variables": {
+            "A": { "type": "integer", "min": -10, "max": 10, "step": 2 },
+            "B": { "type": "integer", "min": -9, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A != 0"
+          ],
+          "answer": "-A / 2",
+          "answerType": "integer",
+          "explanation": "Абсцисса вершины: x = -b ÷ 2a = -({A}) ÷ 2 = {-A / 2}.",
+          "difficulty": 2
+        },
+        {
+          "id": "fn_hyperbola_001",
+          "title": "Обратная пропорциональность",
+          "question": "Функция задана формулой y = {K} ÷ x. Найди y при x = {X}.",
+          "variables": {
+            "K": { "type": "integer", "min": 12, "max": 72, "step": 1 },
+            "X": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "K % X == 0"
+          ],
+          "answer": "K / X",
+          "answerType": "integer",
+          "explanation": "y = {K} ÷ {X} = {K / X}.",
+          "difficulty": 2
+        }
+      ]
+    }
+  ]
+}

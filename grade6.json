@@ -1,0 +1,361 @@
+{
+  "contentVersion": 2,
+  "subject": "mathematics",
+  "grade": 6,
+  "term": "0",
+  "topics": [
+    {
+      "id": "negatives",
+      "title": "Отрицательные числа",
+      "tasks": [
+        {
+          "id": "ng_add_001",
+          "title": "Сложение с отрицательными",
+          "question": "Вычисли: {A} + ({B}) = ?",
+          "variables": {
+            "A": { "type": "integer", "min": -20, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": -20, "max": -1, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "Прибавить {B} — значит вычесть {abs(B)}: {A} + ({B}) = {A + B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "ng_add_002",
+          "title": "Сумма двух отрицательных",
+          "question": "Вычисли: ({A}) + ({B}) = ?",
+          "variables": {
+            "A": { "type": "integer", "min": -30, "max": -1, "step": 1 },
+            "B": { "type": "integer", "min": -30, "max": -1, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "Складываем модули и ставим минус: {A + B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "ng_sub_001",
+          "title": "Вычитание отрицательного",
+          "question": "Вычисли: {A} - ({B}) = ?",
+          "variables": {
+            "A": { "type": "integer", "min": -20, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": -20, "max": -1, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "Минус на минус даёт плюс: {A} - ({B}) = {A} + {abs(B)} = {A - B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "ng_mul_001",
+          "title": "Умножение отрицательных",
+          "question": "Вычисли: ({A}) × ({B}) = ?",
+          "variables": {
+            "A": { "type": "integer", "min": -12, "max": -1, "step": 1 },
+            "B": { "type": "integer", "min": -12, "max": -1, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "Минус на минус даёт плюс: ({A}) × ({B}) = {A * B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "ng_mul_002",
+          "title": "Умножение с разными знаками",
+          "question": "Вычисли: ({A}) × {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": -12, "max": -1, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 12, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "Разные знаки — результат отрицательный: ({A}) × {B} = {A * B}.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "modulus",
+      "title": "Модуль числа",
+      "tasks": [
+        {
+          "id": "md_basic_001",
+          "title": "Модуль числа",
+          "question": "Найди модуль числа: |{A}| = ?",
+          "variables": {
+            "A": { "type": "integer", "min": -30, "max": 30, "step": 1 }
+          },
+          "constraints": [
+            "A != 0"
+          ],
+          "answer": "abs(A)",
+          "answerType": "integer",
+          "explanation": "Модуль — это расстояние до нуля, всегда неотрицательный: |{A}| = {abs(A)}.",
+          "difficulty": 1
+        },
+        {
+          "id": "md_sum_001",
+          "title": "Сумма модулей",
+          "question": "Вычисли: |{A}| + |{B}| = ?",
+          "variables": {
+            "A": { "type": "integer", "min": -20, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": -20, "max": 20, "step": 1 }
+          },
+          "constraints": [
+            "A != 0",
+            "B != 0"
+          ],
+          "answer": "abs(A) + abs(B)",
+          "answerType": "integer",
+          "explanation": "Сначала раскрой модули: |{A}| = {abs(A)}, |{B}| = {abs(B)}. Сумма: {abs(A) + abs(B)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "md_dist_001",
+          "title": "Расстояние между точками",
+          "question": "На координатной прямой отмечены точки {A} и {B}. Найди расстояние между ними.",
+          "variables": {
+            "A": { "type": "integer", "min": -20, "max": -1, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 20, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "abs(A - B)",
+          "answerType": "integer",
+          "explanation": "Расстояние = |{A} - {B}| = |{A - B}| = {abs(A - B)}.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "proportions",
+      "title": "Пропорции",
+      "tasks": [
+        {
+          "id": "pr_basic_001",
+          "title": "Неизвестный член пропорции",
+          "question": "Найди неизвестный член пропорции: {A} : {B} = {C} : x. В ответе запиши x.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 20, "step": 1 },
+            "C": { "type": "integer", "min": 2, "max": 20, "step": 1 }
+          },
+          "constraints": [
+            "A != B",
+            "(B * C) % A == 0"
+          ],
+          "answer": "B * C / A",
+          "answerType": "integer",
+          "explanation": "Основное свойство пропорции: x = {B} × {C} ÷ {A} = {B * C / A}.",
+          "difficulty": 2
+        },
+        {
+          "id": "pr_word_001",
+          "title": "Задача на пропорцию",
+          "question": "За {N} кг яблок заплатили {M} руб. Сколько стоят {K} кг таких яблок (в руб.)?",
+          "variables": {
+            "N": { "type": "integer", "min": 2, "max": 6, "step": 1 },
+            "M": { "type": "integer", "min": 40, "max": 240, "step": 10 },
+            "K": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "(M * K) % N == 0"
+          ],
+          "answer": "M * K / N",
+          "answerType": "integer",
+          "explanation": "Цена одного кг: {M} ÷ {N} = {M / N} руб. За {K} кг: {M / N} × {K} = {M * K / N} руб.",
+          "difficulty": 2
+        },
+        {
+          "id": "pr_map_001",
+          "title": "Масштаб",
+          "question": "На карте с масштабом 1 : {S} расстояние между домами равно {C} см. Найди реальное расстояние между домами (в см).",
+          "variables": {
+            "S": { "type": "integer", "min": 100, "max": 5000, "step": 100 },
+            "C": { "type": "integer", "min": 2, "max": 25, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "S * C",
+          "answerType": "integer",
+          "explanation": "Реальное расстояние = {C} × {S} = {S * C} см.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "percents",
+      "title": "Проценты",
+      "tasks": [
+        {
+          "id": "pc_grow_001",
+          "title": "Подорожание",
+          "question": "Товар стоил {N} руб., а затем подорожал на {P}%. Какова новая цена товара (в руб.)?",
+          "variables": {
+            "N": { "type": "integer", "min": 100, "max": 900, "step": 100 },
+            "P": { "type": "integer", "min": 5, "max": 25, "step": 5 }
+          },
+          "constraints": [],
+          "answer": "N + N * P / 100",
+          "answerType": "integer",
+          "explanation": "Рост цены: {N} × {P} ÷ 100 = {N * P / 100} руб. Новая цена: {N} + {N * P / 100} = {N + N * P / 100} руб.",
+          "difficulty": 2
+        },
+        {
+          "id": "pc_sale_001",
+          "title": "Скидка",
+          "question": "Цена книги была {N} руб. Её снизили на {P}%. Сколько теперь стоит книга (в руб.)?",
+          "variables": {
+            "N": { "type": "integer", "min": 100, "max": 900, "step": 100 },
+            "P": { "type": "integer", "min": 5, "max": 25, "step": 5 }
+          },
+          "constraints": [],
+          "answer": "N - N * P / 100",
+          "answerType": "integer",
+          "explanation": "Скидка: {N} × {P} ÷ 100 = {N * P / 100} руб. Новая цена: {N} - {N * P / 100} = {N - N * P / 100} руб.",
+          "difficulty": 2
+        },
+        {
+          "id": "pc_share_001",
+          "title": "Сколько процентов составляет",
+          "question": "Сколько процентов составляет число {N * P / 100} от числа {N}?",
+          "variables": {
+            "N": { "type": "integer", "min": 100, "max": 900, "step": 100 },
+            "P": { "type": "integer", "min": 5, "max": 25, "step": 5 }
+          },
+          "constraints": [],
+          "answer": "P",
+          "answerType": "integer",
+          "explanation": "Часть ÷ целое × 100%: ({N * P / 100} ÷ {N}) × 100 = {P}%.",
+          "difficulty": 2
+        },
+        {
+          "id": "pc_of_001",
+          "title": "Процент от числа",
+          "question": "Найди {P}% от {N}.",
+          "variables": {
+            "P": { "type": "integer", "min": 5, "max": 30, "step": 5 },
+            "N": { "type": "integer", "min": 100, "max": 900, "step": 100 }
+          },
+          "constraints": [],
+          "answer": "N * P / 100",
+          "answerType": "integer",
+          "explanation": "{N} × {P} ÷ 100 = {N * P / 100}.",
+          "difficulty": 1
+        }
+      ]
+    },
+    {
+      "id": "gcd_lcm",
+      "title": "НОД и НОК",
+      "tasks": [
+        {
+          "id": "gl_gcd_001",
+          "title": "НОД двух чисел",
+          "question": "Найди наибольший общий делитель чисел {A} и {B}.",
+          "variables": {
+            "A": { "type": "integer", "min": 4, "max": 40, "step": 1 },
+            "B": { "type": "integer", "min": 6, "max": 60, "step": 1 }
+          },
+          "constraints": [
+            "A != B",
+            "gcd(A, B) != 1"
+          ],
+          "answer": "gcd(A, B)",
+          "answerType": "integer",
+          "explanation": "НОД({A}, {B}) = {gcd(A, B)} — наибольшее число, на которое делятся оба.",
+          "difficulty": 2
+        },
+        {
+          "id": "gl_lcm_001",
+          "title": "НОК двух чисел",
+          "question": "Найди наименьшее общее кратное чисел {A} и {B}.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 12, "step": 1 }
+          },
+          "constraints": [
+            "A != B"
+          ],
+          "answer": "lcm(A, B)",
+          "answerType": "integer",
+          "explanation": "НОК({A}, {B}) = {lcm(A, B)} — наименьшее число, которое делится на оба.",
+          "difficulty": 2
+        },
+        {
+          "id": "gl_word_001",
+          "title": "Задача на НОД",
+          "question": "Какое наибольшее число одинаковых подарков можно собрать из {A} конфет и {B} мандаринов, использовав все сладости?",
+          "variables": {
+            "A": { "type": "integer", "min": 8, "max": 48, "step": 1 },
+            "B": { "type": "integer", "min": 10, "max": 60, "step": 1 }
+          },
+          "constraints": [
+            "A != B",
+            "gcd(A, B) != 1"
+          ],
+          "answer": "gcd(A, B)",
+          "answerType": "integer",
+          "explanation": "Нужно число, которое делит и {A}, и {B}: НОД({A}, {B}) = {gcd(A, B)}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "coordinates",
+      "title": "Координатная плоскость",
+      "tasks": [
+        {
+          "id": "co_axis_x_001",
+          "title": "Расстояние до оси OX",
+          "question": "Точка A имеет координаты ({X}; {Y}). Найди расстояние от неё до оси OX (в единичных отрезках).",
+          "variables": {
+            "X": { "type": "integer", "min": -9, "max": 9, "step": 1 },
+            "Y": { "type": "integer", "min": -9, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "Y != 0"
+          ],
+          "answer": "abs(Y)",
+          "answerType": "integer",
+          "explanation": "Расстояние до оси OX равно модулю ординаты: |{Y}| = {abs(Y)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "co_axis_y_001",
+          "title": "Расстояние до оси OY",
+          "question": "Точка B имеет координаты ({X}; {Y}). Найди расстояние от неё до оси OY (в единичных отрезках).",
+          "variables": {
+            "X": { "type": "integer", "min": -9, "max": 9, "step": 1 },
+            "Y": { "type": "integer", "min": -9, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "X != 0"
+          ],
+          "answer": "abs(X)",
+          "answerType": "integer",
+          "explanation": "Расстояние до оси OY равно модулю абсциссы: |{X}| = {abs(X)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "co_quadrant_001",
+          "title": "Сумма координат",
+          "question": "Точка C имеет координаты ({X}; {Y}). Найди сумму её координат.",
+          "variables": {
+            "X": { "type": "integer", "min": -10, "max": 10, "step": 1 },
+            "Y": { "type": "integer", "min": -10, "max": 10, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "X + Y",
+          "answerType": "integer",
+          "explanation": "Складываем абсциссу и ординату: {X} + {Y} = {X + Y}.",
+          "difficulty": 1
+        }
+      ]
+    }
+  ]
+}

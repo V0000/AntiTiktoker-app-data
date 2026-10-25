@@ -1,0 +1,248 @@
+{
+  "contentVersion": 2,
+  "subject": "mathematics",
+  "grade": 1,
+  "term": "0",
+  "topics": [
+    {
+      "id": "counting",
+      "title": "Счёт и сравнение чисел",
+      "tasks": [
+        {
+          "id": "count_next_001",
+          "title": "Следующее число",
+          "question": "Назови число, которое идёт сразу после числа {A}.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 19, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A + 1",
+          "answerType": "integer",
+          "explanation": "Чтобы найти следующее число, прибавь один: {A} + 1 = {A + 1}.",
+          "difficulty": 1
+        },
+        {
+          "id": "count_prev_001",
+          "title": "Предыдущее число",
+          "question": "Назови число, которое стоит прямо перед числом {A}.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 20, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A - 1",
+          "answerType": "integer",
+          "explanation": "Чтобы найти предыдущее число, вычти один: {A} - 1 = {A - 1}.",
+          "difficulty": 1
+        },
+        {
+          "id": "count_compare_001",
+          "title": "Какое число больше",
+          "question": "Какое из чисел больше: {A} или {B}? Запиши большее число.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 20, "step": 1 }
+          },
+          "constraints": [
+            "A != B"
+          ],
+          "answer": "max(A, B)",
+          "answerType": "integer",
+          "explanation": "Сравнивай по порядку: какое число дальше при счёте, то и больше.",
+          "difficulty": 1
+        },
+        {
+          "id": "count_compare_002",
+          "title": "Какое число меньше",
+          "question": "Какое из чисел меньше: {A} или {B}? Запиши меньшее число.",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 20, "step": 1 }
+          },
+          "constraints": [
+            "A != B"
+          ],
+          "answer": "min(A, B)",
+          "answerType": "integer",
+          "explanation": "Какое число раньше при счёте, то и меньше.",
+          "difficulty": 1
+        }
+      ]
+    },
+    {
+      "id": "addition",
+      "title": "Сложение в пределах 10 и 20",
+      "tasks": [
+        {
+          "id": "add_10_001",
+          "title": "Сложение в пределах 10",
+          "question": "Реши пример: {A} + {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 5, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 5, "step": 1 }
+          },
+          "constraints": [
+            "A + B <= 10"
+          ],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "Считай по одному: начни с {A} и прибавь {B} единиц.",
+          "difficulty": 1
+        },
+        {
+          "id": "add_20_001",
+          "title": "Сложение в пределах 20",
+          "question": "Вычисли: {A} + {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 8, "step": 1 }
+          },
+          "constraints": [
+            "A + B <= 20"
+          ],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "Дополни первое число до 10, потом прибавь остаток.",
+          "difficulty": 1
+        },
+        {
+          "id": "add_20_002",
+          "title": "Прибавление по частям",
+          "question": "Вычисли удобным способом: {A} + {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 5, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 4, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A + B <= 18"
+          ],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "{A} + {B}: дополни {A} до 10, затем прибавь остальные единицы. Всего {A + B}.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "subtraction",
+      "title": "Вычитание в пределах 10 и 20",
+      "tasks": [
+        {
+          "id": "sub_10_001",
+          "title": "Вычитание в пределах 10",
+          "question": "Реши пример: {A} - {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 3, "max": 10, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 5, "step": 1 }
+          },
+          "constraints": [
+            "A > B"
+          ],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "Отсчитай от {A} назад {B} шага: получится {A - B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "sub_20_001",
+          "title": "Вычитание в пределах 20",
+          "question": "Вычисли: {A} - {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 11, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "Сначала вычти до 10, потом остаток. {A} - {B} = {A - B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "sub_missing_001",
+          "title": "Какое число пропущено",
+          "question": "{A} + ? = {B}. Какое число скрывается под вопросом?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 },
+            "B": { "type": "integer", "min": 10, "max": 18, "step": 1 }
+          },
+          "constraints": [
+            "B > A"
+          ],
+          "answer": "B - A",
+          "answerType": "integer",
+          "explanation": "Неизвестное число = {B} - {A} = {B - A}.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "word_problems",
+      "title": "Простые задачи",
+      "tasks": [
+        {
+          "id": "wp_add_001",
+          "title": "Задача на сложение",
+          "question": "У Маши было {A} яблок, а у Пети — {B} яблок. Сколько яблок у них вместе?",
+          "variables": {
+            "A": { "type": "integer", "min": 3, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 3, "max": 8, "step": 1 }
+          },
+          "constraints": [
+            "A + B <= 20"
+          ],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "Чтобы узнать, сколько вместе, сложи: {A} + {B} = {A + B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "wp_sub_001",
+          "title": "Задача на вычитание",
+          "question": "В корзине было {A} груш. Съели {B} груш. Сколько груш осталось?",
+          "variables": {
+            "A": { "type": "integer", "min": 10, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A > B"
+          ],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "Осталось: {A} - {B} = {A - B}.",
+          "difficulty": 1
+        },
+        {
+          "id": "wp_diff_001",
+          "title": "На сколько больше",
+          "question": "Коля решил {A} задач, а Оля — {B} задач. На сколько задач больше решил Коля?",
+          "variables": {
+            "A": { "type": "integer", "min": 10, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": 3, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A > B"
+          ],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "Чтобы узнать, на сколько больше, вычти: {A} - {B} = {A - B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "wp_add_002",
+          "title": "Задача про карандаши",
+          "question": "В коробке лежало {A} карандашей. Туда положили ещё {B} карандаша. Сколько карандашей стало в коробке?",
+          "variables": {
+            "A": { "type": "integer", "min": 5, "max": 14, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 6, "step": 1 }
+          },
+          "constraints": [
+            "A + B <= 20"
+          ],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "{A} + {B} = {A + B}.",
+          "difficulty": 1
+        }
+      ]
+    }
+  ]
+}

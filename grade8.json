@@ -1,0 +1,245 @@
+{
+  "contentVersion": 2,
+  "subject": "mathematics",
+  "grade": 8,
+  "term": "0",
+  "topics": [
+    {
+      "id": "roots",
+      "title": "Квадратные корни",
+      "tasks": [
+        {
+          "id": "rt_square_001",
+          "title": "Извлечение корня",
+          "question": "Вычисли: √{A * A} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 20, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A",
+          "answerType": "integer",
+          "explanation": "Ищем число, квадрат которого равен {A * A}: это {A}.",
+          "difficulty": 1
+        },
+        {
+          "id": "rt_product_001",
+          "title": "Корень из произведения",
+          "question": "Вычисли: √({A * A} × {B * B}) = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 12, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "√(m × n) = √m × √n: √{A * A} × √{B * B} = {A} × {B} = {A * B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "rt_quotient_001",
+          "title": "Корень из дроби",
+          "question": "Вычисли: √({A * A} ÷ {B * B}) = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A % B == 0"
+          ],
+          "answer": "A / B",
+          "answerType": "integer",
+          "explanation": "√(m ÷ n) = √m ÷ √n: {A} ÷ {B} = {A / B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "rt_sum_001",
+          "title": "Корень и сложение",
+          "question": "Вычисли: √{A * A} + √{B * B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 15, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 15, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A + B",
+          "answerType": "integer",
+          "explanation": "√{A * A} = {A}, √{B * B} = {B}. Сумма: {A} + {B} = {A + B}.",
+          "difficulty": 1
+        }
+      ]
+    },
+    {
+      "id": "quadratic",
+      "title": "Квадратные уравнения",
+      "tasks": [
+        {
+          "id": "qd_full_001",
+          "title": "Полное квадратное уравнение",
+          "question": "Реши уравнение: x² + ({-(P + Q)})·x + ({P * Q}) = 0. В ответе укажи больший корень.",
+          "variables": {
+            "P": { "type": "integer", "min": 1, "max": 9, "step": 1 },
+            "Q": { "type": "integer", "min": 1, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "P != Q"
+          ],
+          "answer": "max(P, Q)",
+          "answerType": "integer",
+          "explanation": "По теореме Виета сумма корней {-(P + Q)}, произведение {P * Q}. Корни: {P} и {Q}. Больший — {max(P, Q)}.",
+          "difficulty": 3
+        },
+        {
+          "id": "qd_incomplete_001",
+          "title": "Неполное квадратное уравнение",
+          "question": "Реши уравнение: x² - {A * A} = 0. В ответе укажи положительный корень.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 12, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A",
+          "answerType": "integer",
+          "explanation": "x² = {A * A}, значит x = √{A * A} = {A} (и x = {A} с минусом).",
+          "difficulty": 2
+        },
+        {
+          "id": "qd_vieta_001",
+          "title": "Теорема Виета",
+          "question": "Сумма корней квадратного уравнения равна {P + Q}, а их произведение — {P * Q}. Найди больший корень.",
+          "variables": {
+            "P": { "type": "integer", "min": 1, "max": 9, "step": 1 },
+            "Q": { "type": "integer", "min": 1, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "P != Q"
+          ],
+          "answer": "max(P, Q)",
+          "answerType": "integer",
+          "explanation": "Подбираем два числа с суммой {P + Q} и произведением {P * Q}: это {P} и {Q}. Больший — {max(P, Q)}.",
+          "difficulty": 3
+        },
+        {
+          "id": "qd_disc_001",
+          "title": "Дискриминант",
+          "question": "Для уравнения x² + ({-(P + Q)})·x + ({P * Q}) = 0 найди дискриминант D = b² - 4c.",
+          "variables": {
+            "P": { "type": "integer", "min": 1, "max": 9, "step": 1 },
+            "Q": { "type": "integer", "min": 1, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "P != Q"
+          ],
+          "answer": "pow(P - Q, 2)",
+          "answerType": "integer",
+          "explanation": "b = {-(P + Q)}, c = {P * Q}. D = ({-(P + Q)})² - 4 × {P * Q} = {pow(P + Q, 2)} - {4 * P * Q} = {pow(P - Q, 2)}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "short_multiplication",
+      "title": "Формулы сокращённого умножения",
+      "tasks": [
+        {
+          "id": "sm_sqsum_001",
+          "title": "Квадрат суммы",
+          "question": "В выражении (x + {A})² после раскрытия скобок укажи коэффициент при x.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 15, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "2 * A",
+          "answerType": "integer",
+          "explanation": "(x + {A})² = x² + 2 × {A} × x + {A * A}. Коэффициент при x равен {2 * A}.",
+          "difficulty": 2
+        },
+        {
+          "id": "sm_sqdiff_001",
+          "title": "Разность квадратов на числах",
+          "question": "Используя формулу разности квадратов, вычисли: {A * A} - {B * B}.",
+          "variables": {
+            "A": { "type": "integer", "min": 3, "max": 25, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 25, "step": 1 }
+          },
+          "constraints": [
+            "A != B"
+          ],
+          "answer": "(A + B) * (A - B)",
+          "answerType": "integer",
+          "explanation": "{A}² - {B}² = ({A} + {B})({A} - {B}) = {A + B} × {A - B} = {(A + B) * (A - B)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "sm_value_001",
+          "title": "Значение алгебраического выражения",
+          "question": "Найди значение выражения ({A} + {B})² - ({A * A} + {B * B}).",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 12, "step": 1 },
+            "B": { "type": "integer", "min": 1, "max": 12, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "2 * A * B",
+          "answerType": "integer",
+          "explanation": "({A} + {B})² = {A * A} + 2 × {A} × {B} + {B * B}. Вычитаем {A * A} и {B * B}, остаётся 2 × {A} × {B} = {2 * A * B}.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "pythagoras",
+      "title": "Теорема Пифагора",
+      "tasks": [
+        {
+          "id": "py_hyp_001",
+          "title": "Найди гипотенузу",
+          "question": "Катеты прямоугольного треугольника равны {3 * K} см и {4 * K} см. Найди гипотенузу (в см).",
+          "variables": {
+            "K": { "type": "integer", "min": 1, "max": 10, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "5 * K",
+          "answerType": "integer",
+          "explanation": "c² = ({3 * K})² + ({4 * K})² = {9 * K * K} + {16 * K * K} = {25 * K * K}. c = √{25 * K * K} = {5 * K} см.",
+          "difficulty": 2
+        },
+        {
+          "id": "py_leg_001",
+          "title": "Найди катет",
+          "question": "Гипотенуза прямоугольного треугольника равна {5 * K} см, один из катетов — {3 * K} см. Найди второй катет (в см).",
+          "variables": {
+            "K": { "type": "integer", "min": 1, "max": 10, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "4 * K",
+          "answerType": "integer",
+          "explanation": "b² = ({5 * K})² - ({3 * K})² = {25 * K * K} - {9 * K * K} = {16 * K * K}. b = {4 * K} см.",
+          "difficulty": 2
+        },
+        {
+          "id": "py_hyp_002",
+          "title": "Египетский треугольник",
+          "question": "Катеты прямоугольного треугольника равны {6 * K} см и {8 * K} см. Найди гипотенузу (в см).",
+          "variables": {
+            "K": { "type": "integer", "min": 1, "max": 8, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "10 * K",
+          "answerType": "integer",
+          "explanation": "c² = ({6 * K})² + ({8 * K})² = {36 * K * K} + {64 * K * K} = {100 * K * K}. c = {10 * K} см.",
+          "difficulty": 2
+        },
+        {
+          "id": "py_diag_001",
+          "title": "Диагональ прямоугольника",
+          "question": "Стороны прямоугольника равны {3 * K} см и {4 * K} см. Найди длину его диагонали (в см).",
+          "variables": {
+            "K": { "type": "integer", "min": 1, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "5 * K",
+          "answerType": "integer",
+          "explanation": "Диагональ — гипотенуза треугольника из двух сторон: √(({3 * K})² + ({4 * K})²) = {5 * K} см.",
+          "difficulty": 2
+        }
+      ]
+    }
+  ]
+}
