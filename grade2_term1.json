@@ -361,11 +361,11 @@
       ]
     },
     {
-      "id": "multiplication",
-      "title": "Умножение",
+      "id": "multiplication_by_2",
+      "title": "Умножение на 2",
       "tasks": [
         {
-          "id": "math_mul_001",
+          "id": "math_mul2_001",
           "title": "Умножение на 2",
           "question": "Вычисли: {A} × 2 = ?",
           "variables": {
@@ -381,10 +381,130 @@
           "answerType": "integer",
           "explanation": "{A} × 2 = {A} + {A} = {A * 2}",
           "difficulty": 1,
-          "enabled": false
+          "enabled": true
         },
         {
-          "id": "math_mul_002",
+          "id": "math_mul2_002",
+          "title": "Умножение 2 на число",
+          "question": "Вычисли: 2 × {A} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 2",
+          "answerType": "integer",
+          "explanation": "От перестановки множителей произведение не меняется: 2 × {A} = {A} × 2 = {A * 2}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul2_003",
+          "title": "Задача на умножение на 2",
+          "question": "В {A} коробках по 2 карандаша. Сколько карандашей всего?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 2",
+          "answerType": "integer",
+          "explanation": "{A} × 2 = {A * 2}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul2_004",
+          "title": "Задача на умножение на 2 (ещё одна)",
+          "question": "На {A} тарелках лежит по 2 яблока. Сколько яблок на всех тарелках?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 2",
+          "answerType": "integer",
+          "explanation": "{A} × 2 = {A * 2}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul2_005",
+          "title": "Площадь прямоугольника со стороной 2 см",
+          "question": "Прямоугольник имеет стороны {A} см и 2 см. Какова его площадь (в кв.см)?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 2",
+          "answerType": "integer",
+          "explanation": "Площадь = длина × ширина = {A} × 2 = {A * 2} кв.см",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul2_006",
+          "title": "Во сколько раз больше (в 2 раза)",
+          "question": "У Иры {A} наклеек, а у Насти в 2 раза больше. Сколько наклеек у Насти?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 2",
+          "answerType": "integer",
+          "explanation": "Если у Насти в 2 раза больше, то наклеек у неё {A} × 2 = {A * 2}.",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul2_007",
+          "title": "Увеличь число в 2 раза",
+          "question": "Увеличь число {A} в 2 раза.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 2",
+          "answerType": "integer",
+          "explanation": "Увеличить в 2 раза — значит умножить на 2: {A} × 2 = {A * 2}",
+          "difficulty": 1,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "multiplication_by_3",
+      "title": "Умножение на 3",
+      "tasks": [
+        {
+          "id": "math_mul3_001",
           "title": "Умножение на 3",
           "question": "Вычисли: {A} × 3 = ?",
           "variables": {
@@ -400,10 +520,130 @@
           "answerType": "integer",
           "explanation": "{A} × 3 = {A} + {A} + {A} = {A * 3}",
           "difficulty": 1,
-          "enabled": false
+          "enabled": true
         },
         {
-          "id": "math_mul_003",
+          "id": "math_mul3_002",
+          "title": "Умножение 3 на число",
+          "question": "Вычисли: 3 × {A} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 3",
+          "answerType": "integer",
+          "explanation": "От перестановки множителей произведение не меняется: 3 × {A} = {A} × 3 = {A * 3}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul3_003",
+          "title": "Задача на умножение на 3",
+          "question": "В {A} вазах стоит по 3 цветка. Сколько цветов во всех вазах?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 3",
+          "answerType": "integer",
+          "explanation": "{A} × 3 = {A * 3}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul3_004",
+          "title": "Задача на умножение на 3 (ещё одна)",
+          "question": "На {A} полках стоит по 3 книги. Сколько книг на всех полках?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 3",
+          "answerType": "integer",
+          "explanation": "{A} × 3 = {A * 3}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul3_005",
+          "title": "Площадь прямоугольника со стороной 3 см",
+          "question": "Прямоугольник имеет стороны {A} см и 3 см. Какова его площадь (в кв.см)?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 3",
+          "answerType": "integer",
+          "explanation": "Площадь = длина × ширина = {A} × 3 = {A * 3} кв.см",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul3_006",
+          "title": "Во сколько раз больше (в 3 раза)",
+          "question": "У Иры {A} наклеек, а у Насти в 3 раза больше. Сколько наклеек у Насти?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 3",
+          "answerType": "integer",
+          "explanation": "Если у Насти в 3 раза больше, то наклеек у неё {A} × 3 = {A * 3}.",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul3_007",
+          "title": "Увеличь число в 3 раза",
+          "question": "Увеличь число {A} в 3 раза.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 3",
+          "answerType": "integer",
+          "explanation": "Увеличить в 3 раза — значит умножить на 3: {A} × 3 = {A * 3}",
+          "difficulty": 1,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "multiplication_by_4",
+      "title": "Умножение на 4",
+      "tasks": [
+        {
+          "id": "math_mul4_001",
           "title": "Умножение на 4",
           "question": "Вычисли: {A} × 4 = ?",
           "variables": {
@@ -419,10 +659,130 @@
           "answerType": "integer",
           "explanation": "{A} × 4 = {A} + {A} + {A} + {A} = {A * 4}",
           "difficulty": 1,
-          "enabled": false
+          "enabled": true
         },
         {
-          "id": "math_mul_004",
+          "id": "math_mul4_002",
+          "title": "Умножение 4 на число",
+          "question": "Вычисли: 4 × {A} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 4",
+          "answerType": "integer",
+          "explanation": "От перестановки множителей произведение не меняется: 4 × {A} = {A} × 4 = {A * 4}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul4_003",
+          "title": "Задача на умножение на 4",
+          "question": "В {A} пакетах лежит по 4 мандарина. Сколько мандаринов всего?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 4",
+          "answerType": "integer",
+          "explanation": "{A} × 4 = {A * 4}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul4_004",
+          "title": "Задача на умножение на 4 (ещё одна)",
+          "question": "У {A} машин по 4 колеса. Сколько колёс у всех машин?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 4",
+          "answerType": "integer",
+          "explanation": "{A} × 4 = {A * 4}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul4_005",
+          "title": "Площадь прямоугольника со стороной 4 см",
+          "question": "Прямоугольник имеет стороны {A} см и 4 см. Какова его площадь (в кв.см)?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 4",
+          "answerType": "integer",
+          "explanation": "Площадь = длина × ширина = {A} × 4 = {A * 4} кв.см",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul4_006",
+          "title": "Во сколько раз больше (в 4 раза)",
+          "question": "У Иры {A} наклеек, а у Насти в 4 раза больше. Сколько наклеек у Насти?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 4",
+          "answerType": "integer",
+          "explanation": "Если у Насти в 4 раза больше, то наклеек у неё {A} × 4 = {A * 4}.",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul4_007",
+          "title": "Увеличь число в 4 раза",
+          "question": "Увеличь число {A} в 4 раза.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 4",
+          "answerType": "integer",
+          "explanation": "Увеличить в 4 раза — значит умножить на 4: {A} × 4 = {A * 4}",
+          "difficulty": 1,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "multiplication_by_5",
+      "title": "Умножение на 5",
+      "tasks": [
+        {
+          "id": "math_mul5_001",
           "title": "Умножение на 5",
           "question": "Вычисли: {A} × 5 = ?",
           "variables": {
@@ -438,115 +798,677 @@
           "answerType": "integer",
           "explanation": "{A} × 5 = {A} + {A} + {A} + {A} + {A} = {A * 5}",
           "difficulty": 1,
-          "enabled": false
+          "enabled": true
         },
         {
-          "id": "math_mul_005",
-          "title": "Умножение двух чисел",
-          "question": "Найди произведение: {A} × {B} = ?",
+          "id": "math_mul5_002",
+          "title": "Умножение 5 на число",
+          "question": "Вычисли: 5 × {A} = ?",
           "variables": {
             "A": {
               "type": "integer",
-              "min": 2,
-              "max": 9,
-              "step": 1
-            },
-            "B": {
-              "type": "integer",
-              "min": 2,
-              "max": 9,
+              "min": 1,
+              "max": 10,
               "step": 1
             }
           },
-          "constraints": [
-            "A * B <= 50"
-          ],
-          "answer": "A * B",
+          "constraints": [],
+          "answer": "A * 5",
           "answerType": "integer",
-          "explanation": "{A} × {B} = {A * B}",
-          "difficulty": 2,
-          "enabled": false
+          "explanation": "От перестановки множителей произведение не меняется: 5 × {A} = {A} × 5 = {A * 5}",
+          "difficulty": 1,
+          "enabled": true
         },
         {
-          "id": "math_mul_006",
-          "title": "Задача на умножение",
-          "question": "В {A} коробках по {B} карандашей. Сколько карандашей всего?",
-          "variables": {
-            "A": {
-              "type": "integer",
-              "min": 2,
-              "max": 8,
-              "step": 1
-            },
-            "B": {
-              "type": "integer",
-              "min": 2,
-              "max": 8,
-              "step": 1
-            }
-          },
-          "constraints": [
-            "A * B <= 40"
-          ],
-          "answer": "A * B",
-          "answerType": "integer",
-          "explanation": "{A} × {B} = {A * B}",
-          "difficulty": 2,
-          "enabled": false
-        },
-        {
-          "id": "math_mul_007",
-          "title": "Площадь прямоугольника",
-          "question": "Прямоугольник имеет стороны {A} см и {B} см. Какова его площадь (в кв.см)?",
+          "id": "math_mul5_003",
+          "title": "Задача на умножение на 5",
+          "question": "В {A} пачках по 5 тетрадей. Сколько тетрадей всего?",
           "variables": {
             "A": {
               "type": "integer",
               "min": 2,
               "max": 10,
               "step": 1
-            },
-            "B": {
-              "type": "integer",
-              "min": 2,
-              "max": 10,
-              "step": 1
             }
           },
-          "constraints": [
-            "A * B <= 60"
-          ],
-          "answer": "A * B",
+          "constraints": [],
+          "answer": "A * 5",
           "answerType": "integer",
-          "explanation": "Площадь = длина × ширина = {A} × {B} = {A * B} кв.см",
+          "explanation": "{A} × 5 = {A * 5}",
           "difficulty": 2,
-          "enabled": false
+          "enabled": true
         },
         {
-          "id": "math_mul_008",
-          "title": "Сравнение: во сколько раз больше",
-          "question": "У Иры {A} наклеек, а у Насти в {B} раз больше. Сколько наклеек у Насти?",
+          "id": "math_mul5_004",
+          "title": "Задача на умножение на 5 (ещё одна)",
+          "question": "В {A} рядах по 5 стульев. Сколько стульев всего?",
           "variables": {
             "A": {
               "type": "integer",
               "min": 2,
               "max": 10,
               "step": 1
-            },
-            "B": {
+            }
+          },
+          "constraints": [],
+          "answer": "A * 5",
+          "answerType": "integer",
+          "explanation": "{A} × 5 = {A * 5}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul5_005",
+          "title": "Площадь прямоугольника со стороной 5 см",
+          "question": "Прямоугольник имеет стороны {A} см и 5 см. Какова его площадь (в кв.см)?",
+          "variables": {
+            "A": {
               "type": "integer",
               "min": 2,
-              "max": 5,
+              "max": 10,
               "step": 1
             }
           },
-          "constraints": [
-            "A * B <= 50"
-          ],
-          "answer": "A * B",
+          "constraints": [],
+          "answer": "A * 5",
           "answerType": "integer",
-          "explanation": "Если у Насти в {B} раз больше, то наклеек у неё {A} × {B} = {A * B}.",
+          "explanation": "Площадь = длина × ширина = {A} × 5 = {A * 5} кв.см",
           "difficulty": 2,
-          "enabled": false
+          "enabled": true
+        },
+        {
+          "id": "math_mul5_006",
+          "title": "Во сколько раз больше (в 5 раз)",
+          "question": "У Иры {A} наклеек, а у Насти в 5 раз больше. Сколько наклеек у Насти?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 5",
+          "answerType": "integer",
+          "explanation": "Если у Насти в 5 раз больше, то наклеек у неё {A} × 5 = {A * 5}.",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul5_007",
+          "title": "Увеличь число в 5 раз",
+          "question": "Увеличь число {A} в 5 раз.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 5",
+          "answerType": "integer",
+          "explanation": "Увеличить в 5 раз — значит умножить на 5: {A} × 5 = {A * 5}",
+          "difficulty": 1,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "multiplication_by_6",
+      "title": "Умножение на 6",
+      "tasks": [
+        {
+          "id": "math_mul6_001",
+          "title": "Умножение на 6",
+          "question": "Вычисли: {A} × 6 = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 6",
+          "answerType": "integer",
+          "explanation": "{A} × 6 = {A} × 5 + {A} = {A * 5} + {A} = {A * 6}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul6_002",
+          "title": "Умножение 6 на число",
+          "question": "Вычисли: 6 × {A} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 6",
+          "answerType": "integer",
+          "explanation": "От перестановки множителей произведение не меняется: 6 × {A} = {A} × 6 = {A * 6}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul6_003",
+          "title": "Задача на умножение на 6",
+          "question": "В {A} упаковках по 6 яиц. Сколько яиц во всех упаковках?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 6",
+          "answerType": "integer",
+          "explanation": "{A} × 6 = {A * 6}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul6_004",
+          "title": "Задача на умножение на 6 (ещё одна)",
+          "question": "У {A} жуков по 6 лап. Сколько лап у всех жуков?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 6",
+          "answerType": "integer",
+          "explanation": "{A} × 6 = {A * 6}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul6_005",
+          "title": "Площадь прямоугольника со стороной 6 см",
+          "question": "Прямоугольник имеет стороны {A} см и 6 см. Какова его площадь (в кв.см)?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 6",
+          "answerType": "integer",
+          "explanation": "Площадь = длина × ширина = {A} × 6 = {A * 6} кв.см",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul6_006",
+          "title": "Во сколько раз больше (в 6 раз)",
+          "question": "У Иры {A} наклеек, а у Насти в 6 раз больше. Сколько наклеек у Насти?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 6",
+          "answerType": "integer",
+          "explanation": "Если у Насти в 6 раз больше, то наклеек у неё {A} × 6 = {A * 6}.",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul6_007",
+          "title": "Увеличь число в 6 раз",
+          "question": "Увеличь число {A} в 6 раз.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 6",
+          "answerType": "integer",
+          "explanation": "Увеличить в 6 раз — значит умножить на 6: {A} × 6 = {A * 6}",
+          "difficulty": 1,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "multiplication_by_7",
+      "title": "Умножение на 7",
+      "tasks": [
+        {
+          "id": "math_mul7_001",
+          "title": "Умножение на 7",
+          "question": "Вычисли: {A} × 7 = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 7",
+          "answerType": "integer",
+          "explanation": "{A} × 7 = {A} × 5 + {A} × 2 = {A * 5} + {A * 2} = {A * 7}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul7_002",
+          "title": "Умножение 7 на число",
+          "question": "Вычисли: 7 × {A} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 7",
+          "answerType": "integer",
+          "explanation": "От перестановки множителей произведение не меняется: 7 × {A} = {A} × 7 = {A * 7}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul7_003",
+          "title": "Задача на умножение на 7",
+          "question": "В одной неделе 7 дней. Сколько дней в {A} неделях?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 7",
+          "answerType": "integer",
+          "explanation": "{A} × 7 = {A * 7}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul7_004",
+          "title": "Задача на умножение на 7 (ещё одна)",
+          "question": "В {A} альбомах по 7 марок. Сколько марок во всех альбомах?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 7",
+          "answerType": "integer",
+          "explanation": "{A} × 7 = {A * 7}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul7_005",
+          "title": "Площадь прямоугольника со стороной 7 см",
+          "question": "Прямоугольник имеет стороны {A} см и 7 см. Какова его площадь (в кв.см)?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 7",
+          "answerType": "integer",
+          "explanation": "Площадь = длина × ширина = {A} × 7 = {A * 7} кв.см",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul7_006",
+          "title": "Во сколько раз больше (в 7 раз)",
+          "question": "У Иры {A} наклеек, а у Насти в 7 раз больше. Сколько наклеек у Насти?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 7",
+          "answerType": "integer",
+          "explanation": "Если у Насти в 7 раз больше, то наклеек у неё {A} × 7 = {A * 7}.",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul7_007",
+          "title": "Увеличь число в 7 раз",
+          "question": "Увеличь число {A} в 7 раз.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 7",
+          "answerType": "integer",
+          "explanation": "Увеличить в 7 раз — значит умножить на 7: {A} × 7 = {A * 7}",
+          "difficulty": 1,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "multiplication_by_8",
+      "title": "Умножение на 8",
+      "tasks": [
+        {
+          "id": "math_mul8_001",
+          "title": "Умножение на 8",
+          "question": "Вычисли: {A} × 8 = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 8",
+          "answerType": "integer",
+          "explanation": "{A} × 8 = {A} × 4 + {A} × 4 = {A * 4} + {A * 4} = {A * 8}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul8_002",
+          "title": "Умножение 8 на число",
+          "question": "Вычисли: 8 × {A} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 8",
+          "answerType": "integer",
+          "explanation": "От перестановки множителей произведение не меняется: 8 × {A} = {A} × 8 = {A * 8}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul8_003",
+          "title": "Задача на умножение на 8",
+          "question": "У {A} пауков по 8 лап. Сколько лап у всех пауков?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 8",
+          "answerType": "integer",
+          "explanation": "{A} × 8 = {A * 8}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul8_004",
+          "title": "Задача на умножение на 8 (ещё одна)",
+          "question": "В {A} коробках по 8 мелков. Сколько мелков всего?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 8",
+          "answerType": "integer",
+          "explanation": "{A} × 8 = {A * 8}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul8_005",
+          "title": "Площадь прямоугольника со стороной 8 см",
+          "question": "Прямоугольник имеет стороны {A} см и 8 см. Какова его площадь (в кв.см)?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 8",
+          "answerType": "integer",
+          "explanation": "Площадь = длина × ширина = {A} × 8 = {A * 8} кв.см",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul8_006",
+          "title": "Во сколько раз больше (в 8 раз)",
+          "question": "У Иры {A} наклеек, а у Насти в 8 раз больше. Сколько наклеек у Насти?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 8",
+          "answerType": "integer",
+          "explanation": "Если у Насти в 8 раз больше, то наклеек у неё {A} × 8 = {A * 8}.",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul8_007",
+          "title": "Увеличь число в 8 раз",
+          "question": "Увеличь число {A} в 8 раз.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 8",
+          "answerType": "integer",
+          "explanation": "Увеличить в 8 раз — значит умножить на 8: {A} × 8 = {A * 8}",
+          "difficulty": 1,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "multiplication_by_9",
+      "title": "Умножение на 9",
+      "tasks": [
+        {
+          "id": "math_mul9_001",
+          "title": "Умножение на 9",
+          "question": "Вычисли: {A} × 9 = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 9",
+          "answerType": "integer",
+          "explanation": "{A} × 9 = {A} × 10 − {A} = {A * 10} − {A} = {A * 9}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul9_002",
+          "title": "Умножение 9 на число",
+          "question": "Вычисли: 9 × {A} = ?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 9",
+          "answerType": "integer",
+          "explanation": "От перестановки множителей произведение не меняется: 9 × {A} = {A} × 9 = {A * 9}",
+          "difficulty": 1,
+          "enabled": true
+        },
+        {
+          "id": "math_mul9_003",
+          "title": "Задача на умножение на 9",
+          "question": "На {A} грядках по 9 кустов клубники. Сколько кустов на всех грядках?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 9",
+          "answerType": "integer",
+          "explanation": "{A} × 9 = {A * 9}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul9_004",
+          "title": "Задача на умножение на 9 (ещё одна)",
+          "question": "В {A} корзинах по 9 грибов. Сколько грибов во всех корзинах?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 9",
+          "answerType": "integer",
+          "explanation": "{A} × 9 = {A * 9}",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul9_005",
+          "title": "Площадь прямоугольника со стороной 9 см",
+          "question": "Прямоугольник имеет стороны {A} см и 9 см. Какова его площадь (в кв.см)?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 9",
+          "answerType": "integer",
+          "explanation": "Площадь = длина × ширина = {A} × 9 = {A * 9} кв.см",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul9_006",
+          "title": "Во сколько раз больше (в 9 раз)",
+          "question": "У Иры {A} наклеек, а у Насти в 9 раз больше. Сколько наклеек у Насти?",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 2,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 9",
+          "answerType": "integer",
+          "explanation": "Если у Насти в 9 раз больше, то наклеек у неё {A} × 9 = {A * 9}.",
+          "difficulty": 2,
+          "enabled": true
+        },
+        {
+          "id": "math_mul9_007",
+          "title": "Увеличь число в 9 раз",
+          "question": "Увеличь число {A} в 9 раз.",
+          "variables": {
+            "A": {
+              "type": "integer",
+              "min": 1,
+              "max": 10,
+              "step": 1
+            }
+          },
+          "constraints": [],
+          "answer": "A * 9",
+          "answerType": "integer",
+          "explanation": "Увеличить в 9 раз — значит умножить на 9: {A} × 9 = {A * 9}",
+          "difficulty": 1,
+          "enabled": true
         }
       ]
     },
