@@ -270,6 +270,127 @@
           "answerType": "integer",
           "explanation": "Площадь = длина × ширина = {A} × {B} = {A * B} кв.см",
           "difficulty": 2
+        },
+        {
+          "id": "mul_4_001",
+          "title": "Умножение на 4",
+          "question": "Вычисли: {A} × 4 = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 10, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 4",
+          "answerType": "integer",
+          "explanation": "{A} × 4 = {A} + {A} + {A} + {A} = {A * 4}. Или удвой дважды.",
+          "difficulty": 2
+        },
+        {
+          "id": "mul_5_001",
+          "title": "Умножение на 5",
+          "question": "Вычисли: {A} × 5 = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 1, "max": 10, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 5",
+          "answerType": "integer",
+          "explanation": "{A} × 5 = {A * 5}. Подсказка: результат всегда оканчивается на 0 или 5.",
+          "difficulty": 2
+        },
+        {
+          "id": "mul_table5_001",
+          "title": "Таблица умножения (до 5)",
+          "question": "Найди произведение: {A} × {B} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 5, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 5, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "{A} × {B} = {A * B}. От перестановки множителей произведение не меняется.",
+          "difficulty": 2
+        },
+        {
+          "id": "mul_one_001",
+          "title": "Умножение на 1",
+          "question": "Вычисли: {A} × 1 = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 5, "max": 99, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 1",
+          "answerType": "integer",
+          "explanation": "При умножении на 1 число не меняется: {A} × 1 = {A}.",
+          "difficulty": 1
+        },
+        {
+          "id": "mul_zero_001",
+          "title": "Умножение на 0",
+          "question": "Вычисли: {A} × 0 = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 5, "max": 99, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 0",
+          "answerType": "integer",
+          "explanation": "При умножении на 0 всегда получается 0: {A} × 0 = {A * 0}.",
+          "difficulty": 1
+        },
+        {
+          "id": "mul_sum_001",
+          "title": "Умножение вместо сложения",
+          "question": "Замени сложение умножением и вычисли: {A} + {A} + {A} = ?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 9, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 3",
+          "answerType": "integer",
+          "explanation": "Три одинаковых слагаемых — это {A} × 3 = {A * 3}.",
+          "difficulty": 2
+        },
+        {
+          "id": "mul_double_001",
+          "title": "Удвоение",
+          "question": "Удвой число {A}.",
+          "variables": {
+            "A": { "type": "integer", "min": 3, "max": 25, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "2 * A",
+          "answerType": "integer",
+          "explanation": "Удвоить — значит умножить на 2: {A} × 2 = {2 * A}.",
+          "difficulty": 1
+        },
+        {
+          "id": "mul_compare_001",
+          "title": "Сравни произведение и число",
+          "question": "Что больше: {A} × 2 или {B}? В ответе запиши большее число.",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 10, "step": 1 },
+            "B": { "type": "integer", "min": 3, "max": 20, "step": 1 }
+          },
+          "constraints": [
+            "A * 2 != B"
+          ],
+          "answer": "max(A * 2, B)",
+          "answerType": "integer",
+          "explanation": "{A} × 2 = {A * 2}. Сравниваем с {B}: большее — {max(A * 2, B)}.",
+          "difficulty": 2
+        },
+        {
+          "id": "mul_word_001",
+          "title": "Задача про велосипеды",
+          "question": "Сколько колёс у {A} двухколёсных велосипедов?",
+          "variables": {
+            "A": { "type": "integer", "min": 3, "max": 12, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "A * 2",
+          "answerType": "integer",
+          "explanation": "У каждого по 2 колеса: {A} × 2 = {A * 2} колеса.",
+          "difficulty": 2
         }
       ]
     },
@@ -317,6 +438,38 @@
           "answer": "A / B",
           "answerType": "integer",
           "explanation": "Делим {A} на {B}: {A} ÷ {B} = {A / B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "div_related_001",
+          "title": "Деление обратно умножению",
+          "question": "Какое число нужно умножить на {B}, чтобы получить {A}?",
+          "variables": {
+            "A": { "type": "integer", "min": 6, "max": 40, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 6, "step": 1 }
+          },
+          "constraints": [
+            "A % B == 0"
+          ],
+          "answer": "A / B",
+          "answerType": "integer",
+          "explanation": "{B} × ? = {A}. Деление помогает: {A} ÷ {B} = {A / B}. Проверка: {B} × {A / B} = {A}.",
+          "difficulty": 2
+        },
+        {
+          "id": "div_word_001",
+          "title": "Задача про тарелки",
+          "question": "{A} пирожных разложили поровну на {B} тарелки. По сколько пирожных на каждой тарелке?",
+          "variables": {
+            "A": { "type": "integer", "min": 8, "max": 36, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 4, "step": 1 }
+          },
+          "constraints": [
+            "A % B == 0"
+          ],
+          "answer": "A / B",
+          "answerType": "integer",
+          "explanation": "Делим поровну: {A} ÷ {B} = {A / B} пирожных на каждой тарелке.",
           "difficulty": 2
         }
       ]
@@ -465,6 +618,116 @@
           "answerType": "integer",
           "explanation": "{P} × {N} = {P * N} руб.",
           "difficulty": 2
+        },
+        {
+          "id": "wp_less_001",
+          "title": "На сколько меньше",
+          "question": "У Оли {A} наклеек, а у Веры — {B} наклеек. На сколько наклеек у Веры меньше, чем у Оли?",
+          "variables": {
+            "A": { "type": "integer", "min": 10, "max": 25, "step": 1 },
+            "B": { "type": "integer", "min": 3, "max": 9, "step": 1 }
+          },
+          "constraints": [
+            "A > B"
+          ],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "Чтобы узнать, на сколько меньше, вычти: {A} - {B} = {A - B}.",
+          "difficulty": 2
+        },
+        {
+          "id": "wp_age_001",
+          "title": "Задача про возраст",
+          "question": "Брату {A} лет, а сестре — {B} лет. На сколько лет сестра младше брата?",
+          "variables": {
+            "A": { "type": "integer", "min": 8, "max": 20, "step": 1 },
+            "B": { "type": "integer", "min": 4, "max": 7, "step": 1 }
+          },
+          "constraints": [
+            "A > B"
+          ],
+          "answer": "A - B",
+          "answerType": "integer",
+          "explanation": "{A} - {B} = {A - B} года (года).",
+          "difficulty": 1
+        },
+        {
+          "id": "wp_chain_001",
+          "title": "Составная задача про конфеты",
+          "question": "В коробке было {A} конфет. Дети съели {B} конфет, а потом в коробку положили ещё {C} конфеты. Сколько конфет стало в коробке?",
+          "variables": {
+            "A": { "type": "integer", "min": 12, "max": 30, "step": 1 },
+            "B": { "type": "integer", "min": 3, "max": 10, "step": 1 },
+            "C": { "type": "integer", "min": 3, "max": 10, "step": 1 }
+          },
+          "constraints": [
+            "A > B"
+          ],
+          "answer": "A - B + C",
+          "answerType": "integer",
+          "explanation": "После того как съели: {A} - {B} = {A - B}. Потом добавили: {A - B} + {C} = {A - B + C}.",
+          "difficulty": 2
+        },
+        {
+          "id": "wp_two_boxes_001",
+          "title": "Составная задача про ящики",
+          "question": "В первом ящике {A} кг яблок, а во втором — на {B} кг больше. Сколько килограммов яблок в двух ящиках вместе?",
+          "variables": {
+            "A": { "type": "integer", "min": 5, "max": 15, "step": 1 },
+            "B": { "type": "integer", "min": 2, "max": 8, "step": 1 }
+          },
+          "constraints": [],
+          "answer": "2 * A + B",
+          "answerType": "integer",
+          "explanation": "Во втором ящике: {A} + {B} = {A + B} кг. Вместе: {A} + {A + B} = {2 * A + B} кг.",
+          "difficulty": 3
+        },
+        {
+          "id": "wp_roses_001",
+          "title": "Задача про розы",
+          "question": "В {A} вазах стоят розы, по {B} роз в каждой. Сколько всего роз в вазах?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 5, "step": 1 },
+            "B": { "type": "integer", "min": 5, "max": 8, "step": 1 }
+          },
+          "constraints": [
+            "A * B <= 40"
+          ],
+          "answer": "A * B",
+          "answerType": "integer",
+          "explanation": "{A} × {B} = {A * B} роз.",
+          "difficulty": 2
+        },
+        {
+          "id": "wp_stickers_001",
+          "title": "Задача про наклейки",
+          "question": "За {N} одинаковых наклеек заплатили {S} руб. Сколько стоит одна наклейка (в руб.)?",
+          "variables": {
+            "N": { "type": "integer", "min": 2, "max": 6, "step": 1 },
+            "S": { "type": "integer", "min": 10, "max": 60, "step": 5 }
+          },
+          "constraints": [
+            "S % N == 0"
+          ],
+          "answer": "S / N",
+          "answerType": "integer",
+          "explanation": "Цена одной наклейки: {S} ÷ {N} = {S / N} руб.",
+          "difficulty": 2
+        },
+        {
+          "id": "wp_masha_001",
+          "title": "Задача про покупку",
+          "question": "Маша купила {A} тетради по {P} руб. и один блокнот за {B} руб. Сколько всего денег она потратила (в руб.)?",
+          "variables": {
+            "A": { "type": "integer", "min": 2, "max": 4, "step": 1 },
+            "P": { "type": "integer", "min": 5, "max": 15, "step": 5 },
+            "B": { "type": "integer", "min": 10, "max": 30, "step": 10 }
+          },
+          "constraints": [],
+          "answer": "A * P + B",
+          "answerType": "integer",
+          "explanation": "Тетради: {A} × {P} = {A * P} руб. Всего: {A * P} + {B} = {A * P + B} руб.",
+          "difficulty": 3
         }
       ]
     }

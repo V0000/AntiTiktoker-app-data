@@ -2,7 +2,7 @@
   "contentVersion": 2,
   "packages": [
     { "subject": "mathematics", "grade": 1, "term": "0", "url": "grade1.json", "revision": 1 },
-    { "subject": "mathematics", "grade": 2, "term": "0", "url": "grade2.json", "revision": 1 },
+    { "subject": "mathematics", "grade": 2, "term": "0", "url": "grade2.json", "revision": 2 },
     { "subject": "mathematics", "grade": 3, "term": "0", "url": "grade3.json", "revision": 1 },
     { "subject": "mathematics", "grade": 4, "term": "0", "url": "grade4.json", "revision": 1 },
     { "subject": "mathematics", "grade": 5, "term": "0", "url": "grade5.json", "revision": 1 },
